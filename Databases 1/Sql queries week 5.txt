@@ -1,0 +1,16 @@
+SELECT Customer.FirstName, Customer.LastName, Customer.CustomerId, Payment.Amount 
+FROM Customer
+INNER JOIN Payment 
+ON Customer.CustomerId = Payment.CustomerId
+
+SELECT Customer.FirstName, Customer.LastName, Customer.CustomerId, AVG(Payment.Amount) AS "Average payed amount"
+FROM Customer
+INNER JOIN Payment 
+ON Customer.CustomerId = Payment.CustomerId
+GROUP BY Customer.FirstName, Customer.LastName, Customer.CustomerId
+
+SELECT FirstName, LastName FROM Customer
+UNION
+SELECT FirstName, LastName FROM Staff
+ORDER BY FirstName ASC
+

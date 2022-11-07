@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .container {
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 0.5fr 1fr 0.5fr 1fr 1fr 1fr 1fr;
+            gap: 10px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "nav nav nav"
+                "header header header"
+                "breadCrumbs breadCrumbs breadCrumbs"
+                "main main side"
+                "main main side"
+                "main main side"
+                "foot foot foot";
+        }
+
+        .foot {
+            background-color: bisque;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                ". . .";
+            grid-area: foot;
+        }
+
+        .nav {
+            background-color: darkseagreen;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                ". . .";
+            grid-area: nav;
+        }
+
+        .breadCrumbs {
+            background-color: aquamarine;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                ". . .";
+            grid-area: breadCrumbs;
+        }
+
+        .header {
+            background-color: cornflowerblue;
+            grid-area: header;
+        }
+
+        .main {
+            background-color: crimson;
+            grid-area: main;
+        }
+
+        .side {
+            background-color: slategrey;
+            grid-area: side;
+        }
+
+        .nav2 {
+            display:flex;
+            justify-content: center;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+
+    <nav class="nav">
+        <div class="nav2">
+            <p>a</p>
+            <p>2</p>
+        </div>
+    </nav>
+    <header class="header">header</header>
+    <div class="breadCrumbs">breadCrumbs</div>
+    <main class="main">main</main>
+    <aside class="side">side</aside>
+    <footer class="foot">foot</footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+CREATE TABLE Product (
+ProductNr int,
+Productnaam varchar(255),
+ProductOmschrijving varchar(1000) null,
+InkoopPrijs money null,
+VerkoopPrijs money null,
+Voorraad int,
+PRIMARY KEY (ProductNr)
+)
+
+INSERT INTO Product (ProductNr, Productnaam, ProductOmschrijving, InkoopPrijs, VerkoopPrijs, Voorraad)
+VALUES (12345, 'Veggie burger', 'Omschrijving', 1.85, 3.85, 200);
+INSERT INTO Product (ProductNr, Productnaam, ProductOmschrijving, InkoopPrijs, VerkoopPrijs, Voorraad)
+VALUES (5235, 'Zwembad type 1', '4.9mx1.5m', 2900.00, 3600.00, 10);
+INSERT INTO Product (ProductNr, Productnaam, ProductOmschrijving, InkoopPrijs, VerkoopPrijs, Voorraad)
+VALUES (34534, 'Vitamine C', '1000 pillen', 2.55, 6.95, 10000);
+INSERT INTO Product (ProductNr, Productnaam, ProductOmschrijving, InkoopPrijs, VerkoopPrijs, Voorraad)
+VALUES (76556, 'Fitbit', 'Charge 4 zwart', 50.00, 149.99, 100);
+INSERT INTO Product (ProductNr, Productnaam, ProductOmschrijving, InkoopPrijs, VerkoopPrijs, Voorraad)
+VALUES (7456, 'Grolsch bier', '10 liter', 4.95, 25.95, 50);
+
+
+ALTER TABLE Omzet
+ALTER COLUMN VerkoperNr int NOT NULL;
+
+// Change some id's
+ALTER TABLE Omzet
+ADD PRIMARY KEY (VerkoperNr);
+--
+ALTER TABLE Verkoper
+ALTER COLUMN VerkoperNr int NOT NULL;
+
+ALTER TABLE Verkoper
+ADD PRIMARY KEY (VerkoperNr);
+--
+ALTER TABLE Klant
+ALTER COLUMN KlantNR int NOT NULL
+
+ALTER TABLE Klant
+ADD PRIMARY KEY (KlantNr);
+--
+ALTER TABLE Kamer
+ALTER COLUMN KamerNr int NOT NULL;
+
+ALTER TABLE Kamer
+ADD PRIMARY KEY (KamerNr);
+

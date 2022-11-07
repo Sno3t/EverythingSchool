@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 0.5fr 1fr 0.5fr 1fr 1fr 1fr 1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+        "nav nav nav"
+        "header header header"
+        "breadCrumbs breadCrumbs breadCrumbs"
+        "side main main"
+        "side main main"
+        "side main main"
+        "foot foot foot";
+        }
+
+        .foot {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+    ". . .";
+            grid-area: foot;
+        }
+
+        .nav {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+    ". . .";
+            grid-area: nav;
+        }
+
+        .side {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+    "."
+    "."
+    ".";
+            grid-area: side;
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+    "."
+    "."
+    ".";
+            grid-area: main;
+        }
+
+        .breadCrumbs {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+    ". . .";
+            grid-area: breadCrumbs;
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="foot"></div>
+    <div class="nav"></div>
+    <div class="side"></div>
+    <div class="main"></div>
+    <div class="breadCrumbs"></div>
+    <div class="header"></div>
+</div>
+
+</body>
+</html>

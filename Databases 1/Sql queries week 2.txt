@@ -1,0 +1,117 @@
+Subquery's and views
+
+SELECT Klant.VerkoperNr, Klant.KlantNaam
+FROM Klant
+INNER JOIN Verkoper
+ON Klant.VerkoperNr = Verkoper.VerkoperNr
+WHERE Verkoper.VerkoperNaam = 'Carlyle';
+
+SELECT *
+FROM Kamer
+INNER JOIN Verkoper
+ON Kamer.KamerNr = Verkoper.KamerNummer
+ORDER BY Kamer.Grootte DESC;
+
+SELECT VerkoperNaam, JaarinDienst, KamerNummer FROM Verkoper ORDER BY VerkoperNaam ASC;
+
+
+CREATE VIEW [VerkoperBasisGegevens] AS
+SELECT VerkoperNaam, JaarinDienst, KamerNummer
+FROM Verkoper
+ORDER BY VerkoperNaam ASC;
+
+The ORDER BY clause is invalid in views, inline functions, derived tables, subqueries, and common table expressions, unless TOP, OFFSET or FOR XML is also specified.
+
+
+CREATE VIEW [VerkoperBasisGegevens] AS
+SELECT VerkoperNaam, JaarinDienst, KamerNummer
+FROM Verkoper;
+
+SELECT * FROM VerkoperBasisGegevens WHERE JaarinDienst BETWEEN 1990 AND 2000 ORDER BY JaarinDienst DESC
+
+DROP VIEW VerkoperBasisGegevens
+
+SELECT Klant.KlantNaam, Klant.KlantNr
+FROM Klant
+INNER JOIN Verkoper
+ON Klant.VerkoperNr = Verkoper.VerkoperNr
+WHERE Klant.KlantNr > 2000;
+
+----------------------------------------------
+
+Aggregate functions
+
+SELECT SUM(Aantal) FROM Omzet;
+SELECT AVG(Grootte) FROM Kamer;
+SELECT MAX(KamerNummer) FROM Verkoper;
+SELECT COUNT(KlantNr) FROM Klant WHERE PlaatsHfdkntr = 'New York';
+
+SELECT COUNT(KlantNr)
+FROM Klant
+INNER JOIN Verkoper
+ON Klant.VerkoperNr = Verkoper.VerkoperNr
+WHERE (PlaatsHfdkntr = 'New York' OR PlaatsHfdkntr = 'Los Angeles')
+AND (Verkoper.VerkoperNr = 137 OR Verkoper.VerkoperNr = 204);	
+
+SELECT MAX(CommPerct) AS HoogsteCommisiePercentage, MIN(CommPerct) AS LaagsteCommisiePercentage
+FROM Omzet
+INNER JOIN Verkoper
+ON Omzet.VerkoperNr = Verkoper.VerkoperNr
+WHERE JaarinDienst > 2000;
+
+SELECT COUNT(DISTINCT KamerNr) FROM Kamer;
+SELECT SUM(Grootte) FROM Kamer;
+SELECT COUNT(Distinct ProductNr) FROM Omzet;
+
+	
+----------------------------------------------
+
+Group by, having
+
+SELECT Verkoper.VerkoperNr, COUNT(Klant.KlantNr) AS KlantAantal 
+FROM Klant
+INNER JOIN Verkoper
+ON Klant.VerkoperNr = Verkoper.VerkoperNr
+GROUP BY Verkoper.VerkoperNr
+HAVING COUNT(Verkoper.VerkoperNr) >= 1;
+
+SELECT Verkoper.VerkoperNr, Klant.PlaatsHfdkntr, COUNT(Klant.KlantNr) AS KlantAantal
+FROM Klant
+INNER JOIN Verkoper
+ON Klant.VerkoperNr = Verkoper.VerkoperNr
+GROUP BY Verkoper.VerkoperNr, Klant.PlaatsHfdkntr
+HAVING COUNT(Verkoper.VerkoperNr) >= 1
+ORDER BY KlantAantal DESC;
+
+SELECT Verkoper.VerkoperNr
+FROM Klant
+INNER JOIN Verkoper
+ON Klant.VerkoperNr = Verkoper.VerkoperNr
+GROUP BY Verkoper.VerkoperNr
+HAVING COUNT(Verkoper.VerkoperNr) > 1
+
+SELECT Verkoper.VerkoperNaam
+FROM Klant
+INNER JOIN Verkoper
+ON Klant.VerkoperNr = Verkoper.VerkoperNr
+GROUP BY Verkoper.VerkoperNaam
+HAVING COUNT(Verkoper.VerkoperNr) > 1
+
+SELECT Klant.PlaatsHfdkntr, COUNT(Klant.KlantNr) AS KlantAantal
+FROM Klant
+INNER JOIN Verkoper
+ON Klant.VerkoperNr = Verkoper.VerkoperNr
+WHERE KlantNaam LIKE '%Store%' OR KlantNaam LIKE '%Hardware%'
+GROUP BY Klant.PlaatsHfdkntr
+HAVING COUNT(Verkoper.VerkoperNr) >= 1
+ORDER BY KlantAantal DESC;
+
+
+SELECT Klant.PlaatsHfdkntr, COUNT(Klant.KlantNr) AS KlantAantal
+FROM Klant
+INNER JOIN Verkoper
+ON Klant.VerkoperNr = Verkoper.VerkoperNr
+WHERE KlantNaam LIKE '%Store%' AND KlantNaam LIKE '%Hardware%'
+GROUP BY Klant.PlaatsHfdkntr
+HAVING COUNT(Verkoper.VerkoperNr) >= 1
+ORDER BY KlantAantal DESC;

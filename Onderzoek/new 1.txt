@@ -1,0 +1,64 @@
+Wat is een software ontwikkelaar?
+Als een software ontwikkelaar ben jij degene die ervoor zorgt dat machines, programma's, websites en software hebben waarop ze kunnen draaien.
+Je houdt je ook bezig met de behoeftes van de gebruiker en ontwikkeld daar nieuwe functies of oplossing voor.
+Dit doe je vaak in team verband met andere software ontwikkelaars, klanten en andere belanghebbende.
+Software ontwikkeling is een groot begrip aangezien bijna alles software nodig heeft. Meestal zijn software ontwikkelaars gespecaliseerd in één programeer taal of meer.
+Ictergezocht geeft aan dan de talen die het meest gevraagd worden zijn: Python, Java, Javascript, C en C#.
+Dit zijn dus talen die aangerade worden om te leren aangezien hier veel vraag naar is in Nederland.
+
+Maar hoe ziet een dag van een ontwikkelaar er ongeveer uit?
+Als software ontwikkelaar werk je waarschijnlijk bij een bedrijf dat diensten verleend aan en ander. Je werkt dus voor externe klanten en creërd nieuwe of onderhoud software voor ze.
+Je kunt voor meerdere delen verantwoordelijk zijn zoals het ontwerpen van de software, het maken ervan, het testen en het implementeren uiteindelijk.
+Je werkt vaak met andere programmeurs aan een project met een teamleider die overzicht houdt op het project. Je werkt misschien weken tot maanden aan een project afhankelijk van de grootte.
+
+Wat je salaris is hangt af van hoe lang en hoeveel ervaring je al hebt opgedaan. 
+Als je net begint ben je een junior developer met een maandelijks salaris rond de 2.938 euro per maand. Op dit punt leer je nog heel. Je leert je progammeren functioneel toe te passen en staat meestal een team bij die je kunt helpen. Je verantwoordelijkheden op dit punt zijn niet zo heel groot maar dit kan anders zijn per bedijf.
+Na 4 tot 6 jaar werk ervaring wordt je beschouwed als een medior developer en heb je een gemiddeld salaris van 3.661 euro per maand. Als medior developer heb je een paar jaar ervaring en kun je al code van hoge kwaliteit opleveren. Je werkt aan meerdere projecten tegelijkerteit en bent in staat om code van andere te interpreteren, herschrijven en verbeteren.
+Gemiddeld wanneer je 7 tot 10+ werk evaring hebt ben je een senior. Op dit punt ben je het persoon waar junior developers hulp aan vragen, je bent het aanspreek punt voor projecten en kunt overweg met verschillende programeer talen. Je hebt hebt vizie, zet opdrachten op en hebt heel veel kennis.
+Het gemiddelde salaris voor een senior develeper houdt zo ongeveer 6.833 euro per maand in.
+Get gemiddelde salaris zijn overgenomen van Glassdoor.nl.
+
+Als software ontwikkelaar wordt er van je verwacht dat je bepaalde 
+
+Door het gevolg van robotisering verdwijnen er behoorlijk veel beroepen, software ontwikkelaar is daar gelukkig niet een van.
+
+De kans dat de baan van sofrware ontwikkelaar gaat verwdijnen is heel klein. Er zijn bepaalde dingen die AI gewoon simpel weg niet kunnen. AI zou zeker kunnen helpen later met programmeren maar overnemen zal het niet lukken. Voor programmeren moet je namelijk kritisch kunnen nadeken en creatieve oplossingen kunnen bedenken.
+En nu we het hebben over eigenschappen van een programmeur er zijn ook nog andere die erg worden gewardeerd in het bedrijfs leven. Zoals eerder gezegt kritisch nadenken en creatief zijn worden erg gewareerd maar ook bijvoorbeel goede communicatie skills hebben vind men fijn. Het anyliseren van problemen, het goed op jezelf kunnen werken en op de hoogte blijven van nieuwe ontwikkelingen in je vak gebied worden ook van je verwacht.
+
+Bronnen:
+https://casenine.com/nl/blog/het-verschil-tussen-een-software-developer-en-een-software-engineer/
+https://www.ictergezocht.nl/blog/147_de-meest-populaire-programmeertalen-anno/ (2)
+https://www.glassdoor.nl/Salaries/netherlands-junior-software-developer-salary-SRCH_IL.0,11_IN178_KO12,37.htm?countryRedirect=true (3)
+https://www.mijnzzp.nl/Beroep/2128-Junior-software-developer/Informatie
+https://www.jobpersonality.com/softwareontwikkelaar
+https://www.upskilled.edu.au/skillstalk/will-ai-take-over-your-programming-job (6)
+
+
+Wat is een software ontwikkelaar?
+Als een software ontwikkelaar ben jij degene die ervoor zorgt dat machines, programma's, websites en software hebben waarop ze kunnen draaien. Je houdt je ook bezig met de behoeftes van de gebruiker en ontwikkeld daar nieuwe functies of oplossing voor. Dit doe je vaak in team verband met andere software ontwikkelaars, klanten en andere belanghebbende.
+Software ontwikkeling is een groot begrip aangezien bijna alles software nodig heeft. Meestal zijn software ontwikkelaars gespecaliseerd in één programeer taal of meer. Ictergezocht geeft aan dan de talen die het meest gevraagd worden zijn: Python, Java, Javascript, C en C#.
+Dit zijn dus talen die aangerade worden om te leren aangezien hier veel vraag naar is in Nederland.
+
+Maar hoe ziet een dag van een ontwikkelaar er ongeveer uit?
+Als software ontwikkelaar werk je waarschijnlijk bij een bedrijf dat diensten verleend aan en ander. Je werkt dus voor externe klanten en creërd nieuwe of onderhoud software voor ze.
+Je kunt voor meerdere delen verantwoordelijk zijn zoals het ontwerpen van de software, het maken ervan, het testen en het implementeren uiteindelijk. Je werkt vaak met andere programmeurs aan een project met een teamleider die overzicht houdt op het project.
+
+
+
+
+Wat is een software ontwikkelaar?
+Als een software ontwikkelaar ben jij degene die ervoor zorgt dat machines, programma's, websites en software hebben waarop ze kunnen draaien. Je houdt je ook bezig met de behoeftes van de gebruiker en ontwikkeld daar nieuwe functies of oplossing voor. Dit doe je vaak in team verband met andere software ontwikkelaars, klanten en andere belanghebbende.
+Software ontwikkeling is een groot begrip aangezien bijna alles software nodig heeft. Meestal zijn software ontwikkelaars gespecaliseerd in één programeer taal of meer. Ictergezocht geeft aan dan de talen die het meest gevraagd worden zijn: Python, Java, Javascript, C en C#. Dit zijn dus talen die aangerade worden om te leren aangezien hier veel vraag naar is in Nederland. (2)
+
+Maar wat kun je nou verwachten als een software ontwikkelaar?
+Als software ontwikkelaar werk je waarschijnlijk bij een bedrijf dat diensten verleend aan en ander. Je werkt dus voor externe klanten en creërd nieuwe of onderhoud software voor ze. Je kunt voor meerdere delen verantwoordelijk zijn zoals het ontwerpen van de software, het maken ervan, het testen en het implementeren uiteindelijk. Je werkt vaak met andere programmeurs aan een project met een teamleider die overzicht houdt op het project. Je werkt misschien weken tot maanden aan een project afhankelijk van de grootte.
+
+Wat je salaris is hangt af van hoe lang en hoeveel ervaring je al hebt opgedaan. 
+Als je net begint ben je een junior developer met een maandelijks salaris rond de 2.938 euro per maand. Op dit punt leer je nog heel. Je leert je progammeren functioneel toe te passen en staat meestal een team bij die je kunt helpen. Je verantwoordelijkheden op dit punt zijn niet zo heel groot maar dit kan anders zijn per bedijf.
+Na 4 tot 6 jaar werk ervaring wordt je beschouwed als een medior developer en heb je een gemiddeld salaris van 3.661 euro per maand. Als medior developer heb je een paar jaar ervaring en kun je al code van hoge kwaliteit opleveren. Je werkt aan meerdere projecten tegelijkerteit en bent in staat om code van andere te interpreteren, herschrijven en verbeteren.
+Wanneer je gemiddeld 7 tot 10+ werk evaring hebt ben je een senior. Op dit punt ben je het persoon waar junior developers hulp aan vragen, je bent het aanspreek punt voor projecten en kunt overweg met verschillende programeer talen. Je hebt hebt vizie, zet opdrachten op en hebt heel veel kennis.
+Het gemiddelde salaris voor een senior develeper houdt zo ongeveer 6.833 euro per maand in.
+Get gemiddelde salaris zijn overgenomen van Glassdoor.nl. (2)
+
+De kans dat de baan van sofrware ontwikkelaar gaat verwdijnen is heel klein. Er zijn nou een maal bepaalde taken die AI gewoon simpel weg niet kunnen. AI zou zeker kunnen met het programmeren maar overnemen zal het niet lukken. Voor programmeren moet je namelijk kritisch kunnen nadeken en creatieve oplossingen kunnen bedenken.
+En nu we het hebben over eigenschappen van een programmeur; er zijn ook nog andere die erg worden gewardeerd in het bedrijfs leven. Zoals eerder gezegt kritisch nadenken en creatief zijn word erg gewardeerd maar ook bijvoorbeel goede communicatie skills hebben vind men fijn. Het analyseren van problemen, het goed op jezelf kunnen werken en op de hoogte blijven van nieuwe ontwikkelingen in je vak gebied worden ook van je verwacht.
