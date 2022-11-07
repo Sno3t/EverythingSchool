@@ -1,0 +1,83 @@
+CRUD
+
+INSERT INTO Kamer (KamerNr, Telefoon, Grootte)
+VALUES (2001, null, 80);
+INSERT INTO Kamer (KamerNr, Telefoon, Grootte)
+VALUES (2002, +31612345678, 200);
+
+INSERT INTO Verkoper (VerkoperNr, VerkoperNaam, CommPerct, JaarinDienst, KamerNummer)
+VALUES (1, 'Donald', 95, YEAR(GETDATE()), NULL);
+INSERT INTO Verkoper (VerkoperNr, VerkoperNaam, CommPerct, JaarinDienst, KamerNummer)
+VALUES (2, 'Melania', 94, YEAR(GETDATE()), NULL);
+INSERT INTO Verkoper (VerkoperNr, VerkoperNaam, CommPerct, JaarinDienst, KamerNummer)
+VALUES (3, 'Storm', 0, YEAR(GETDATE()), NULL);
+
+
+SELECT VerkoperNr, VerkoperNaam, CommPerct, JaarinDienst FROM Verkoper
+SELECT * FROM Verkoper WHERE KamerNummer IS NULL 
+DELETE FROM Verkoper WHERE KamerNummer IS NULL
+
+------------------------------------
+
+CRUD PART 2 
+
+UPDATE Verkoper SET CommPerct = CommPerct * 1.2 WHERE JaarinDienst < YEAR(GETDATE())-20;
+
+
+
+------------------------------------
+
+JOIN
+
+INSERT INTO Kamer (KamerNr, Telefoon, Grootte)
+VALUES (2001, null, 80);
+INSERT INTO Kamer (KamerNr, Telefoon, Grootte)
+VALUES (2002, +31612345678, 200);
+
+INSERT INTO Verkoper (VerkoperNr, VerkoperNaam, CommPerct, JaarinDienst, KamerNummer)
+VALUES (1, 'Donald', 95, YEAR(GETDATE()), NULL);
+INSERT INTO Verkoper (VerkoperNr, VerkoperNaam, CommPerct, JaarinDienst, KamerNummer)
+VALUES (2, 'Melania', 94, YEAR(GETDATE()), NULL);
+INSERT INTO Verkoper (VerkoperNr, VerkoperNaam, CommPerct, JaarinDienst, KamerNummer)
+VALUES (3, 'Storm', 0, YEAR(GETDATE()), NULL);
+
+JOIN DEEL 2
+SELECT Kamer.KamerNr, Verkoper.VerkoperNaam
+FROM Kamer
+RIGHT JOIN Verkoper
+ON Kamer.KamerNr = Verkoper.KamerNummer
+ORDER BY Kamer.KamerNr DESC;
+
+SELECT Kamer.KamerNr, Verkoper.VerkoperNaam
+FROM Kamer
+LEFT JOIN Verkoper
+ON Kamer.KamerNr = Verkoper.KamerNummer
+ORDER BY Kamer.KamerNr DESC;
+
+SELECT Kamer.KamerNr, Verkoper.VerkoperNaam
+FROM Kamer
+INNER JOIN Verkoper
+ON Kamer.KamerNr = Verkoper.KamerNummer
+ORDER BY Kamer.KamerNr DESC;
+
+SELECT Kamer.KamerNr, Verkoper.VerkoperNaam
+FROM Kamer
+FULL OUTER JOIN Verkoper
+ON Kamer.KamerNr = Verkoper.KamerNummer
+ORDER BY Kamer.KamerNr DESC;
+
+SELECT Verkoper.VerkoperNaam, Kamer.Telefoon
+FROM Kamer
+RIGHT JOIN Verkoper
+ON Kamer.KamerNr = Verkoper.KamerNummer
+ORDER BY Kamer.KamerNr DESC;
+
+SELECT Verkoper.VerkoperNaam, Kamer.Telefoon, Klant.KlantNaam
+FROM Kamer
+INNER JOIN Verkoper ON Kamer.KamerNr = Verkoper.KamerNummer
+INNER JOIN Klant ON Klant.VerkoperNr = Verkoper.VerkoperNr
+INNER JOIN Omzet ON Omzet.VerkoperNr = Verkoper.VerkoperNr
+WHERE Omzet.Aantal < 3000
+
+SELECT  Verk1.VerkoperNaam, Verk2.VerkoperNaam
+FROM Verkoper AS Verk1, Verkoper AS Verk2

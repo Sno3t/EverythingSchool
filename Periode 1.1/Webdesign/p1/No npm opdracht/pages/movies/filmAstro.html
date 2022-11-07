@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Film</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/film.css">
+    <script type="text/javascript" src="../../scripts/showMore.js"></script>
+    <script type="text/javascript" src="../../scripts/navDeep.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <nav class="nav" >
+        <script id="nav" type="text/javascript" src="../../scripts/navDeep.js"></script>
+<!--        <div onload="navDeep()" id="nav"></div>-->
+    </nav>
+
+    <header>
+        <div class="header-flex">
+            <img src="../../images/astroboy/banner.png" style="height: 180px" alt="Astro Boy">
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-flex">
+            <em>
+                <a href="../index.html">Home</a> ->
+                <a href="filmAstro.html">Astro Boy</a>
+            </em>
+        </div>
+    </div>
+
+    <aside class="sidebar">
+        <div class="sidebar-flex">
+            <h1>Rating 7/10</h1>
+            <p>Reviews:</p>
+
+            <div class="review"><p>Tony <br>This is a pretty nice movie! <br>6/10</p></div>
+
+            <div class="newReview">
+                <form>
+                    <table>
+
+                        <tbody>
+                        <tr>
+                            <td><p>----------------------------------</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Want to leave a review?</p></td>
+                        </tr>
+                        <tr>
+                            <td><label for="moviename">Movie name:</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="moviename" name="movieName"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="description">Description:</label></td>
+                        </tr>
+                        <tr>
+                            <td><textarea id="description" name="description" rows="4" cols="30"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for="rating">Rating: (.../10):</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="rating" name="rating"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" value="Submit"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+
+        </div>
+    </aside>
+
+    <main class="main">
+        <h1>Astro Boy</h1>
+        <p>Director: David Bowers</p>
+        <p>Release year: 2009</p>
+
+        <p> Description: <br>
+            As created by Tezuka, ASTRO BOY is a robot created by a brilliant scientist as a substitute for his son who
+            <span id="dots">...</span><span id="more">was killed in a traffic accident. The scientist gives ASTRO BOY his super powers - eyes like searchlights,
+                    ears that hear for miles, fingers enhanced with lasers, limbs that fire rockets and the ability to fly!</span>
+        </p>
+        <button onclick="myFunction()" id="myBtn">Read more</button>
+
+        <div class="actors">
+            <div>
+                <img src="../../images/astroboy/actors/gravatar.png" height="100 px" alt="">
+                <a href="../actors/NicolasCage.html"><p style="text-align: center">Nicolage Cage</p></a>
+
+            </div>
+
+            <div>
+                <img src="../../images/astroboy/actors/gravatar.png" height="100 px" alt="">
+                <a href="#"><a href="#"><p style="text-align: center">Kristen Bell</p></a>
+            </div>
+
+            <div>
+                <img src="../../images/astroboy/actors/gravatar.png" height="100 px" alt="">
+                <a href="#"><a href="#"><p style="text-align: center">Freddie Highmore</p></a>
+            </div>
+            <div>
+                <img src="../../images/astroboy/actors/gravatar.png" height="100 px" alt="">
+                <a href="#"><a href="#"><p style="text-align: center">Bill Nighy</p></a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <script id="footer" src="../../scripts/footerDeep.js"></script>
+    </footer>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+Klant tabel
+
+SELECT * FROM Klant;
+SELECT KlantNaam, PlaatsHfdkntr FROM Klant;
+SELECT DISTINCT  PlaatsHfdkntr FROM Klant;
+SELECT KlantNaam FROM Klant WHERE PlaatsHfdkntr = 'Los Angeles' OR PlaatsHfdkntr = 'New York';
+SELECT KlantNaam FROM Klant WHERE KlantNaam LIKE 'C%';
+SELECT * FROM Klant WHERE KlantNaam LIKE '%Store%';
+SELECT * FROM Klant WHERE KlantNaam NOT LIKE '%’%';
+SELECT * FROM Klant ORDER BY PlaatsHfdkntr;
+SELECT * FROM Klant ORDER BY PlaatsHfdkntr, KlantNaam DESC;
+
+SELECT *
+FROM Klant
+INNER JOIN Verkoper
+ON Klant.VerkoperNr = Verkoper.VerkoperNr
+WHERE Verkoper.VerkoperNr = 137;
+
+---------------------------------
+
+
+Verkoper tabel
+
+SELECT VerkoperNaam, CommPerct FROM Verkoper WHERE CommPerct > 15;
+SELECT VerkoperNaam FROM Verkoper WHERE CommPerct BETWEEN 10 AND 15;
+SELECT VerkoperNaam  FROM Verkoper WHERE JaarinDienst < 2000 AND CommPerct >=15;
+SELECT *  FROM Verkoper WHERE JaarinDienst > YEAR(GETDATE())-20;
+SELECT VerkoperNr FROM klant WHERE PlaatsHfdkntr = 'New York'
+
+SELECT Verkoper.VerkoperNaam, Verkoper.VerkoperNr 
+FROM Verkoper
+INNER JOIN Klant
+ON Verkoper.VerkoperNr = Klant.VerkoperNr
+WHERE Klant.PlaatsHfdkntr = 'New York';
+
+---------------------------------
+
+
+Omzet-tabel en kamer-tabel
+
+SELECT Aantal FROM Omzet WHERE VerkoperNr = 361;
+SELECT VerkoperNr FROM Omzet WHERE Aantal < 1000 OR Aantal > 3000;
+
+SELECT Verkoper.VerkoperNr
+FROM Omzet
+INNER JOIN Verkoper
+ON Omzet.VerkoperNr = Verkoper.VerkoperNr
+WHERE Omzet.ProductNr = 26722;
+
+SELECT Verkoper.VerkoperNaam
+FROM Omzet
+INNER JOIN Verkoper
+ON Omzet.VerkoperNr = Verkoper.VerkoperNr
+WHERE Omzet.ProductNr = 26722;
+
+SELECT * FROM Omzet WHERE VerkoperNR 
+IN (
+SELECT VerkoperNr FROM Omzet WHERE Omzet.ProductNr = 16386;)'
+AND VerkoperNR 
+IN (
+SELECT VerkoperNr FROM Omzet WHERE Omzet.ProductNr = 26722;)
+
+
+SELECT * FROM Kamer WHERE Grootte BETWEEN 80 AND 100;
+SELECT * FROM Kamer ORDER BY Grootte DESC;
+

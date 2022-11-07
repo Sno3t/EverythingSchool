@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Film</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/film.css">
+    <script type="text/javascript" src="../../scripts/showMore.js"></script>
+</head>
+<body>
+
+
+<div class="container">
+    <nav class="nav">
+        <script id="nav" type="text/javascript" src="../../scripts/navDeep.js"></script>
+    </nav>
+
+    <header>
+        <div class="header-flex">
+            <img src="../../images/spacejam/banner.jpg" style="height: 180px" alt="Astro Boy">
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-flex">
+            <em>
+                <a href="../index.html">Home</a> ->
+                <a href="filmSpacejam.html">Space Jam</a>
+            </em>
+        </div>
+    </div>
+
+    <aside class="sidebar">
+        <div class="sidebar-flex">
+            <h1>Rating 9/10</h1>
+            <p>Reviews:</p>
+
+            <div class="review"><p>Tony <br>This is a pretty nice movie! <br>7/10</p></div>
+
+            <div class="newReview">
+                <form>
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td><p>----------------------------------</p></td>
+                        </tr>
+                        <tr>
+                            <td><label for="moviename">Movie name:</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="moviename" name="movieName"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="description">Description:</label></td>
+                        </tr>
+                        <tr>
+                            <td><textarea id="description" name="description" rows="4" cols="30"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for="rating">Rating: (.../10):</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="rating" name="rating"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" value="Submit"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+
+
+        </div>
+    </aside>
+
+    <main class="main">
+        <h1>Space Jam</h1>
+        <p>Director: Joe Pytka</p>
+        <p>Release year: 2021</p>
+
+        <p> Description: <br>
+            In a desperate attempt to win a basketball match and earn their freedom, the Looney Tunes seek the aid of retired basketball champion, Michael Jordan.
+            <span id="dots">...</span><span id="more">Swackhammer, owner of the amusement park planet Moron Mountain is desperate get new attractions and he decides that the Looney Tune characters would be perfect.</span>
+        </p>
+        <button onclick="myFunction()" id="myBtn">Read more</button>
+
+        <div class="actors">
+            <div>
+                <img src="../../images/astroboy/actors/gravatar.png" height="100 px" alt="">
+                <a href="../actors/MichaelJordan.html"><p style="text-align: center">Michael Jordan</p></a>
+            </div>
+
+            <div>
+                <img src="../../images/astroboy/actors/gravatar.png" height="100 px" alt="">
+                <p style="text-align: center">Billy West</p>
+            </div>
+
+            <div>
+                <img src="../../images/astroboy/actors/gravatar.png" height="100 px" alt="">
+                <p style="text-align: center">Wayne Knight</p>
+            </div>
+            <div>
+                <img src="../../images/astroboy/actors/gravatar.png" height="100 px" alt="">
+                <p style="text-align: center">Theresa Randle</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <script id="footer" src="../../scripts/footerDeep.js"></script>
+    </footer>
+
+</div>
+
+
+</body>
+</html>
