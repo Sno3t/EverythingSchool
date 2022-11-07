@@ -1,0 +1,99 @@
+OPDRACHT 1 ----
+1)
+CREATE VIEW [StaffPayments] AS
+SELECT Staff.StaffId ,Payment.PaymentId FROM
+Staff 
+Join Payment 
+on Staff.StaffId = Payment.StaffId
+GROUP BY Payment.PaymentId, Staff.StaffId
+
+2)
+SELECT Staff.FirstName, Staff.LastName, Staff.StaffId
+FROM Staff
+INNER JOIN Payment  ON Payment.StaffId = Staff.StaffId
+GROUP BY Staff.FirstName, Staff.LastName, Staff.StaffId
+
+OPDRACHT 2
+1) ALTER TABLE Customer
+ADD CONSTRAINT YorN  CHECK (Active LIKE 'Y' OR Active LIKE 'N');
+
+2.1) 
+Als je deze constraint zou willen toevoegen moet de database ook al compatiable zijn, op het moment staan er allen 0 en 1 in.
+
+2.2)
+Om dit op te lossen zou je bijvoorbeeld alle nullen naar n kunnen veranderen en eenen naar y en daarna opnieuw de constraint toevoegen.
+
+
+Active kunnen alleen cijfers zijn en 'y' en 'n' zijn letters 
+
+
+OPDRAHCT 3
+1) 
+INSERT INTO City (City, CountryId) 
+VALUES ('Tilburg', 67)
+
+INSERT INTO Address (Address, CityId, District, PostalCode, Phone)
+VALUES ('Zwartvenseweg 12', 601, 'Oud-noord', '5044ZP', 0681160318)
+  
+INSERT INTO Customer (StoreId, FirstName, LastName, Email, AddressId, Active) 
+VALUES (1,'Tycho', 'Brakenhoff', 'ts.brakenhoff@student.avans.nl', 606, 1)
+
+
+OPDRACHT 4
+1)
+UPDATE Film SET OriginalLanguageId = 4 WHERE Description LIKE '%China%'
+
+OPDRACHT 5
+1)
+SELECT Country.Country, CountryId
+FROM Country
+WHERE NOT EXISTS (
+	SELECT Country.Country, Country.CountryId FROM Country
+	RIGHT JOIN City ON City.CountryId = Country.CountryId
+)
+
+OPDRACHT 6
+1)
+SELECT DISTINCT StoreId, COUNT(FilmId) AS Amount FROM Inventory
+GROUP BY StoreId, FilmId 
+2)
+
+3)
+CREATE VIEW [FilmAmount] AS SELECT DISTINCT StoreId, COUNT(FilmId) AS Amount FROM Inventory
+GROUP BY StoreId, FilmId 
+
+SELECT * FROM FilmAmount ORDER BY Amount DESC
+
+OPDRACHT 7
+1)
+SELECT DISTINCT Actor.ActorId FROM Actor 
+INNER JOIN Film_Actor on Actor.ActorId = Film_Actor.ActorId
+INNER JOIN Film ON Film_Actor.ActorId = Film.FilmId
+INNER JOIN Film_Category ON Film.FilmId = Film_Category.FilmId
+WHERE Film_Category.CategoryId = 7
+
+2)
+
+3)
+SELECT  Actor.ActorId FROM Actor 
+INNER JOIN Film_Actor on Actor.ActorId = Film_Actor.ActorId
+INNER JOIN Film ON Film_Actor.ActorId = Film.FilmId
+INNER JOIN Film_Category ON Film.FilmId = Film_Category.FilmId
+WHERE Film_Category.CategoryId = 7
+ORDER BY Film.Length ASC
+
+OPDRACHT 8
+CREATE TABLE Reservation (
+ReservationID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+DATE DATETIME,
+State varchar(10 ) CHECK (State LIKE 'Expired' OR State LIKE 'Done' OR State LIKE 'Active'),
+Inventory int,
+Customer int,
+ReservationDate DATE,
+
+
+ADD PRIMARY KEY (Inventory, Customer, ReservationDate),
+
+ADD FOREIGN KEY ReservationID 
+CONSTRAINT FK_Inventory FOREIGN KEY (Inventory)
+      REFERENCES Inventory (InventoryId)
