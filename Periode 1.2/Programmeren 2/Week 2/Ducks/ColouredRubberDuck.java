@@ -1,3 +1,5 @@
+package Ducks;
+
 public class ColouredRubberDuck extends RubberDuck {
     private String colour;
 

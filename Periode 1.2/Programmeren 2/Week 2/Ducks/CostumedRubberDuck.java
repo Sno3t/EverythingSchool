@@ -1,3 +1,5 @@
+package Ducks;
+
 public class CostumedRubberDuck extends RubberDuck {
 
     private String costume;

@@ -8,6 +8,8 @@ public class TestCamera {
         photoCamera.trigger();
         System.out.println(photoCamera.timesTriggered);
         System.out.println(photoCamera.calculateStorageLeft());
+
+
     }
 
 

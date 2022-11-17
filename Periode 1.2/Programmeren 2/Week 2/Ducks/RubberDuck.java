@@ -1,3 +1,5 @@
+package Ducks;
+
 public class RubberDuck {
     private String name;
     protected String sound;
