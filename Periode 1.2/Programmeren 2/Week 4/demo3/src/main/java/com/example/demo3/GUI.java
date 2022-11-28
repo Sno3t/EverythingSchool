@@ -10,11 +10,6 @@ public class GUI extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("The cake is a lie!");
-
-//        stage.setHeight(120);
-//        stage.setWidth(240);
-
-
         Label label = new Label("Is the cake a lie?");
         Scene mainView = new Scene(label, 720, 360);
         stage.setScene(mainView);
