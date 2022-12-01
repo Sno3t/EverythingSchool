@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Film</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/film.css">
+    <link rel="stylesheet" href="/css/general.css">
+    <script type="text/javascript" src="/scripts/showMore.js"></script>
+</head>
+<body>
+
+
+<div class="container">
+    <nav class="nav">
+        <script id="nav" type="text/javascript" src="/scripts/nav.js"></script>
+    </nav>
+
+    <header>
+        <div class="header-flex">
+            <img src="/images/spacejam/banner.jpg" style="height: 160px; padding-top: 20px" alt="Space jam">
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <div class="breadcrumbs-flex">
+            <em>
+                <a href="/index.html">Home</a> ->
+                <a href="filmSpacejam.html">Space Jam</a>
+            </em>
+        </div>
+    </div>
+
+    <aside class="sidebar">
+        <div class="sidebar-flex">
+            <h1>Rating 9/10</h1>
+            <p>Reviews:</p>
+            <div class="review"><p>Tony <br>This is a pretty nice movie! <br>7/10</p></div>
+            <div class="newReview">
+                <form>
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td><p>----------------------------------</p></td>
+                        </tr>
+                        <tr>
+                            <td><label for="moviename">Movie name:</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="moviename" name="movieName"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="description">Description:</label></td>
+                        </tr>
+                        <tr>
+                            <td><textarea id="description" name="description" rows="4" cols="30"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for="rating">Rating: (.../10):</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="rating" name="rating"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" value="Submit"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+        <div class="movieDescrip">
+            <h1>Space Jam</h1>
+            <p> Description: <br>
+                Space Jam: A New Legacy (also known as Space Jam 2) is a 2021 American live-action/animated sports
+                comedy film produced by Warner Animation Group and distributed by Warner Bros. Pictures. The film was
+                directed by Malcolm D. Lee from a screenplay by Juel Taylor, Tony Rettenmaier, Keenan Coogler, Terence
+                Nance, Jesse Gordon and Celeste Ballard.[8] It serves as a standalone sequel to Space Jam (1996) and is
+                the first theatrically released film to feature the Looney Tunes characters since Looney Tunes: Back in
+                Action (2003). The film stars basketball player LeBron James as a fictional version of himself; Don
+                Cheadle, Khris Davis, Sonequa Martin-Green, and Cedric Joe star in live-action roles, while Jeff
+                Bergman, Eric Bauza, and Zendaya headline the Looney Tunes voice cast. The film follows James enlisting
+                the Looney Tunes' aid to win a basketball game in a Warner Bros.-themed virtual multiverse against a
+                rogue artificial intelligence's avatars after James's son is abducted by the AI.
+                <br>
+
+            <div id="myDIV" style="display:none">
+                Discussions for a Space Jam successor began following its release. Director Joe Pytka was attached to
+                return in that capacity and Spike Brandt and Tony Cervone signed on as the animation directors; however,
+                the project was stalled due to Michael Jordan's refusal to return. Several possible spin-offs focusing
+                on other athletes, including Jeff Gordon, Tiger Woods, and Tony Hawk, were also discussed but never
+                materialized. After several years in development, a LeBron James-led sequel was officially announced in
+                2014 with filming under Nance taking place from June to September 2019 around Los Angeles. After several
+                weeks into filming, Nance left the project in July 2019 and was replaced by Lee.
+                <br>
+                Premiering in Los Angeles on July 12, Space Jam: A New Legacy was released nationwide in the United
+                States by Warner Bros. Pictures on July 16, 2021, and through HBO Max for one month. The film was a box
+                office disappointment, grossing $163 million worldwide against a production budget of $150 million, and
+                received generally negative reviews from critics for its script, humor, and runtime; and particularly
+                for its extensive product placement of Warner Bros. properties.[9] It won three of its four Golden
+                Raspberry Award nominations, including Worst Actor for James.
+                <br>
+            </div>
+            <button onclick="myFunction()">Read more</button>
+
+            <div class="actors">
+                <div class="actorImage">
+                    <img src="/images/astroboy/actors/gravatar.png" height="100 px" alt="">
+                    <a href="/actors/MichaelJordan.html"><p style="text-align: center">Michael Jordan</p></a>
+                </div>
+
+                <div class="actorImage">
+                    <img src="/images/astroboy/actors/gravatar.png" height="100 px" alt="">
+                    <p style="text-align: center">Billy West</p>
+                </div>
+
+                <div class="actorImage">
+                    <img src="/images/astroboy/actors/gravatar.png" height="100 px" alt="">
+                    <p style="text-align: center">Wayne Knight</p>
+                </div>
+                <div class="actorImage">
+                    <img src="/images/astroboy/actors/gravatar.png" height="100 px" alt="">
+                    <p style="text-align: center">Theresa Randle</p>
+                </div>
+            </div>
+        </div>
+        <div class="movieInfo">
+            <p>
+                <b>Director</b><br>
+                Ali Samadi Ahadi<br><br>
+
+                <b>Cast</b><br>
+                LeBron James,
+                Cedric Joe,
+                Zendaya,
+                Don Cheadle,
+                Michael B. Jordan,
+                Sonequa Martin<br><br>
+
+                <b>Release</b><br>
+                July 14, 2021<br><br>
+
+                <b>Langauge</b><br>
+                English<br><br>
+
+                <b>Length</b><br>
+                114 minutes<br><br>
+            </p>
+        </div>
+
+    </main>
+    <footer class="footer">
+        <script id="footer" src="/scripts/footer.js"></script>
+    </footer>
+</div>
+
+
+</body>
+</html>
