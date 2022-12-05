@@ -1,0 +1,4 @@
+from nginx
+COPY src /usr/share/nginx/html
+
+expose 80
