@@ -10,3 +10,5 @@ Functionele afhankelijkheden aanhouden
 On updaten, On delete toevoegen met lijnen van keys (U:C, D:C)
 
 2 -> 3
+Nog dergelijke atributen die niet afhankelijk zijn van de primary key splitsen.
+
