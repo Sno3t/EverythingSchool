@@ -4,8 +4,8 @@ Primary key updaten
 Simpelste oplossing
 
 1 -> 2
-Als dubelle key bestaat -> Tabellen splitsen
-Dubelle data eruit halen 
+Als dubbele key bestaat -> Tabellen splitsen
+Dubbele data eruit halen 
 Functionele afhankelijkheden aanhouden
 On updaten, On delete toevoegen met lijnen van keys (U:C, D:C)
 
