@@ -1,0 +1,5 @@
+Flight: AI350,28,ABCDE
+T000001,Marjolein Gerdes,5A,True
+T000002,Remo van der Heiden,5B,True
+T000003,Arno Broeders,5c,True
+ 
