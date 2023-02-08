@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <title>About</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/about.css">
-    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
 
@@ -13,26 +12,39 @@
 <body>
 
 
-<div class="container">
-
-    <nav>
+<div class="container-fluid">
+    <nav class="row">
         <script id="nav" src="/scripts/nav.js"></script>
     </nav>
+</div>
 
-    <header class="header">
-        <div class="header-flex">
-            <img src="/images/about/1570174600967.jpg" style="height: 130px; padding: 15px; border-radius: 50%" alt="Tycho">
-        </div>
-    </header>
 
-    <div class="breadcrumbs">
-        <div class="breadcrumbs-flex">
-            <em>
-                <a href="index.html">Home</a> ->
-                <a href="about.html">About me</a>
-            </em>
+<header class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-1">
+            <div class="d-flex flex-row justify-content-center">
+                <img class="p-2" src="/images/about/1570174600967.jpg" style="height: 130px; padding: 15px; border-radius: 50%"
+                     alt="Foto of me">
+            </div>
         </div>
     </div>
+</header>
+
+
+<div class="container-fluid breadcrumbs">
+    <div class="row justify-content-around">
+        <div class="col-1">
+            <div class="d-flex flex-row justify-content-center">
+                <a class="p-2" href="/index.html">Home</a>
+                <p>-></p>
+                <a class="p-2" href="/about.html">About me</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
 
     <main>
         <div>
@@ -56,11 +68,19 @@
         </div>
     </aside>
 
-    <footer class="footer">
-        <script id="footer" src="/scripts/footer.js"></script>
-    </footer>
 
+</div>
 
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-1">
+            <div class="d-flex flex-row justify-content-center">
+                <footer class="footer">
+                    <script id="footer" src="/scripts/footer.js"></script>
+                </footer>
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>

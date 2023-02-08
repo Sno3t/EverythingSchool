@@ -1,2 +1,3 @@
 FROM nginx
-COPY C:\Users\Snoet\Desktop\movies\src /usr/share/nginx/html
+COPY ./src /usr/share/nginx/html
+expose 80

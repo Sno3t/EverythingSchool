@@ -1,0 +1,62 @@
+Opdracht 1 
+
+SELECT * FROM Film INNER join Film_Category ON Film.FilmId = Film_Category.FilmId
+INNER JOIN Category ON Film_Category.CategoryId = Category.CategoryId
+Where Category.CategoryId = (SELECT CategoryId FROM Category WHERE Name = 'Action' OR Name = 'Sci-Fi')
+ORDER BY Film.ReleaseYear, Film.Title ASC
+
+
+Opdracht 2
+
+ALTER TABLE dbo.Customer ADD
+	PhoneNumber nchar(14) NOT NULL
+	CHECK (PhoneNumber LIKE '0%' OR PhoneNumber LIKE '+%')
+
+Doordat je het verplicht maakt moet elke entry in de database een telefoon nummer hebben die ze niet hebben. Hierdoor krijg je een error dat niet alle entries geupdate zijn en een telefoon nummer hebben.
+
+Opdracht 3
+
+INSERT INTO Film (Title, Description, ReleaseYear, LanguageId)
+VALUES ('Joker', 'A crime movie based on a super vilain from the Batman-stories', 2019, 
+	(SELECT LanguageId FROM Language WHERE Name = 'English'))
+
+
+Opdracht 4
+
+UPDATE Film
+   SET Length = Length * 1.1
+ WHERE Length > 120
+
+Opdracht 5
+
+CREATE VIEW First_and_LastNames
+AS
+(SELECT FirstName AS FirstName, LastName AS Lastname FROM Actor
+UNION 
+SELECT FirstName AS FirstName, LastName AS Lastname FROM Staff
+UNION
+SELECT FirstName AS FirstName, LastName AS Lastname FROM Customer)
+
+Opdracht 6
+
+SELECT DISTINCT CategoryId, COUNT(CategoryId) AS Aantal FROM Film_Category
+GROUP BY CategoryId
+
+Opdracht 7
+
+SELECT CustomerId, COUNT(CustomerId) as aantal_betalingen FROM Payment
+GROUP BY (CustomerId)
+HAVING COUNT(CustomerId)> 10
+ORDER BY  COUNT(CustomerId), CustomerId DESC
+
+Opdracht 8
+
+CREATE TABLE FilmStudio
+	(FilmId int NOT NULL IDENTITY (1, 1),
+	CONSTRAINT PK_FilmStudio PRIMARY KEY (FilmId),
+	Name varchar(100) NOT NULL,
+	AddressId int NULL,
+	FOREIGN KEY
+	(AddressId) REFERENCES Address(AddressId) 
+	ON UPDATE  CASCADE 
+	ON DELETE  SET NULL)
