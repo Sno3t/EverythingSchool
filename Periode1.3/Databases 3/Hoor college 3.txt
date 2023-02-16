@@ -1,0 +1,38 @@
+
+FUNCTION ---------------------------------------------
+
+CREATE FUNCTION dbo.HighestPayment()
+RETURNS Decimal
+BEGIN
+	RETURN (SELECT MAX(Amount) FROM Payment);
+END;
+
+
+SELECT *, (Amount/dbo.HighestPayment()) AS Ratio FROM Payment;
+
+
+
+CREATE FUNCTION dbo.PostcodeCustomer(@postal varchar(10))
+RETURNS TABLE
+AS
+	RETURN (SELECT Customer.* FROM Customer 
+	INNER JOIN Address ON Customer.AddressId = Address.AddressId
+	WHERE Address.PostalCode = @postal);
+
+ SELECT * FROM dbo.PostcodeCustomer(21954)
+
+
+TRIGGER ---------------------------------------------
+
+ALTER TRIGGER dbo.DeniedTwo 
+   ON  [dbo].[Actor] 
+   INSTEAD OF INSERT
+AS 
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for trigger here
+	PRINT  'aaaa'
+END
