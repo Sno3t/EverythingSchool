@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Pokemon" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="Pokemon" />
-    <module name="Pokemon" />
-    <method v="2">
-      <option name="Make" enabled="true" />
-    </method>
-  </configuration>
-</component>
