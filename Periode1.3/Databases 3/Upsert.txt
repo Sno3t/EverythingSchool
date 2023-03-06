@@ -1,0 +1,26 @@
+ALTER PROCEDURE UpsertActor
+	@firstName varchar(45) = '',
+	@lastname varchar(45) = '',
+	@returnId int OUTPUT
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	IF EXISTS (SELECT ActorId FROM Actor WHERE FirstName = @firstName AND LastName = @lastname)
+		BEGIN
+			--UPDATE actor SET FirstName = @firstName, LastName = @lastname
+			 Select @returnId = ActorId FROM Actor WHERE FirstName = @firstName AND LastName = @lastname
+		END
+	ELSE 
+		BEGIN
+			INSERT INTO Actor (FirstName, LastName) VALUES (@firstname, @lastname)
+			SELECT @returnId = SCOPE_IDENTITY()
+		END
+END
+GO
+
+DECLARE @id INT
+EXEC UpsertActor 'ab', 'bc', @id OUTPUT
+SELECT @id

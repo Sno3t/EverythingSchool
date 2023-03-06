@@ -1,0 +1,105 @@
+Interview 1 CB
+
+De tool zelf
+	Geen ristricties in UML standaarden
+	Nederlands talig
+	Tutorial voor de tool
+	Help functie in de tool zelf
+	Shortcuts (Vi shortcuts)
+	Geen UML standaarden aanhouden, geen templates
+	//Suggestie tekst groter kunnen maken
+	
+Authorisatie 
+	Hoeft niet samen te werken
+	Log wie wat heeft gedaan
+	
+Overig
+	Prettig dat het een webtool is
+
+Referenties naar:
+	Vi - shortcuts
+	Visio - heeft erd in gemaakt
+	Xfig - vroeger gebruikt
+	Powerpoint tekentool - wordt momenteel gebruikt
+	Draw.io - wel eens gebruikt
+
+--------------------------------------------------------------------------
+Interview 2 LE
+
+Use case diagrammen
+	Alle elementen
+		Aktoren
+		Systeem grenzen
+		Namen 
+		Associaties
+	Subniveaus in use cases
+	Exporteren naar pdf, jpg
+	Samenwerken realtime
+		Chat mogelijkheid
+		Commentaar
+		Realtime veranderingen zien
+		History
+		Rivisie beheer
+	OMG Standaarden aanhouden (object management group)
+	Authorisatie
+	Naar code genereren
+
+Use case specificaties
+	//Suggestie	use case exporteren naar document
+	Templates
+	Custom templates
+	Help functies/ online tutorials 
+	Use case specificaties aangevuld worden OMG standaard
+	
+Verschillende eind producten in één tool
+	UML
+		Klasse diagrammen
+		Sequence diagrammen
+		ERD's
+		Use Case
+			Automatische controle / afgedwongen
+	
+Het liefst het programma zelf maken.
+
+Referenties naar:
+	Balsemiq 
+	visio - Niet uigebreid genoeg 
+	visual paradigm - te uit gebreid
+
+--------------------------------------------------------------------------
+Interview 3 PC
+
+Overzicht
+
+Specificaties plaatjes toevoegen van ERD
+
+
+
+Tekenen
+	Use case diagrammen
+		Templates
+		Specificaties
+	Touch screen tekenen
+	// Suggestie drawpad
+	OMG standaarden afdwingen 
+	Werkt zonder internet
+	Op mac werkende
+	
+Use case specificaties
+	Templates, mag niet te dwingend zijn
+	Mockups
+	Exporteren en importeren van jpg/pg, pdfs
+
+Overig
+	Hulp
+		Online hulp beschikbaar
+		(Korte) cursus
+	Deelbaar (liefst niet online(?))
+	
+Referenties naar:
+	Word
+	Visio
+	
+	
+
+

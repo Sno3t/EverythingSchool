@@ -14,10 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.example.roomwordssample;
-
-import static com.android.example.roomwordssample.MainActivity.EXTRA_DATA_ID;
-import static com.android.example.roomwordssample.MainActivity.EXTRA_DATA_UPDATE_WORD;
+package com.android.example.roomwordssample.meal;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,6 +23,11 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import static com.android.example.roomwordssample.meal.MainActivity.EXTRA_DATA_ID;
+import static com.android.example.roomwordssample.meal.MainActivity.EXTRA_DATA_UPDATE_WORD;
+
+import com.android.example.roomwordssample.R;
 
 /**
  * This class displays a screen where the user enters a new word.
