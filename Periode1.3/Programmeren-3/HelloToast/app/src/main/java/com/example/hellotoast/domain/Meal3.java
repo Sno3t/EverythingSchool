@@ -1,16 +1,11 @@
 package com.example.hellotoast.domain;
 
-import androidx.annotation.NonNull;
-import androidx.room.ColumnInfo;
-
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Meal2 {
+public class Meal3 {
 
-    @ColumnInfo
-
-    private int id;
+    private int mId;
     private String mName;
     private String mDescription;
 
@@ -38,7 +33,7 @@ public class Meal2 {
     // Namen van deelnemers
     private ArrayList<String> mParticipants;
 
-    private Meal(Builder builder){
+    private Meal3(Builder builder){
         this.mId = builder.mId;
         this.mName = builder.mName;
         this.mDescription = builder.mDescription;
@@ -121,8 +116,8 @@ public class Meal2 {
             return this;
         }
 
-        public Meal build() {
-            return new Meal(this);
+        public Meal3 build() {
+            return new Meal3(this);
         }
     }
 

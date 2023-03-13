@@ -23,20 +23,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate aangeroepen");
 
         // Maak verbinding met de Buttons
-        openCounterBtn = (Button) findViewById(R.id.open_counter_activity_btn);
-        openCounterBtn.setOnClickListener(this);
-
-        counterPlusBtn = (Button) findViewById(R.id.counter_plus_btn);
-        counterPlusBtn.setOnClickListener(this);
-
-        mCounterOutput = (TextView) findViewById(R.id.counter_output_txt);
-        mCounterOutput.setText("" + this.mCounter);
-
-        openCostumeListBtn = findViewById(R.id.open_costume_list_view);
-        openCostumeListBtn.setOnClickListener(this);
+//        openCounterBtn = (Button) findViewById(R.id.open_counter_activity_btn);
+//        openCounterBtn.setOnClickListener(this);
+//
+//        counterPlusBtn = (Button) findViewById(R.id.counter_plus_btn);
+//        counterPlusBtn.setOnClickListener(this);
+//
+//        mCounterOutput = (TextView) findViewById(R.id.counter_output_txt);
+//        mCounterOutput.setText("" + this.mCounter);
+//
+//        openCostumeListBtn = findViewById(R.id.open_costume_list_view);
+//        openCostumeListBtn.setOnClickListener(this);
 
         // Voorbeeld van gebruik van Meal class met Builder Pattern
         Meal newMeal = new Meal.Builder("Spaghetti", "Heerlijke pasta!", 6.75)

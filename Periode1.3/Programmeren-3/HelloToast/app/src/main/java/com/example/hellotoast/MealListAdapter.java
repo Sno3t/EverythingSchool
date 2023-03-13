@@ -7,68 +7,70 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.hellotoast.domain.Person;
+import com.example.hellotoast.domain.Meal;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonListAdapter extends RecyclerView.Adapter<PersonListAdapter.PersonViewHolder> {
+public class MealListAdapter extends RecyclerView.Adapter<MealListAdapter.MealViewHolder> {
 
-    private static final String TAG = PersonListAdapter.class.getSimpleName();
-    private List<Person> mPeople;
+    private static final String TAG = MealListAdapter.class.getSimpleName();
+    private List<Meal> mMeals;
     private LayoutInflater mInflater;
 
-    public PersonListAdapter(Context context) {
+    public MealListAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
     }
 
     @NonNull
     @Override
-    public PersonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MealViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Log.d(TAG, "onCreateViewHolder");
         // Inflate an item view.
-        View mItemView = mInflater.inflate(R.layout.person_list_item, parent, false);
-        return new PersonViewHolder(mItemView);
+        View mItemView = mInflater.inflate(R.layout.meal_list_item, parent, false);
+        return new MealViewHolder(mItemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PersonViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MealViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder nr " + position);
-        Person person = mPeople.get(position);
+        Meal meal = mMeals.get(position);
         String name = new StringBuilder()
-                .append(person.getTitle())
+                .append(meal.getName())
                 .append(" ")
-                .append(person.getFirstName())
+                .append(meal.getDescription())
                 .append(" ")
-                .append(person.getLastName())
+                .append(meal.getImageUrl())
                 .toString();
         holder.name.setText(name);
-        Glide.with(holder.itemView).load(person.getImageUrl()).into(holder.image);
+        Glide.with(holder.itemView).load(meal.getImageUrl()).into(holder.image);
     }
 
     @Override
     public int getItemCount() {
-        if(this.mPeople == null)
+        if(this.mMeals == null)
             return 0;
-        else return mPeople.size();
+        else return mMeals.size();
     }
 
-    public void setData(ArrayList<Person> mPeople) {
-        Log.d(TAG, "setData(mPeople)");
-        this.mPeople = mPeople;
+    public void setData(ArrayList<Meal> mMeals) {
+        Log.d(TAG, "setData(mMeals)");
+        this.mMeals = mMeals;
         notifyDataSetChanged();
     }
 
-    class PersonViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class MealViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private final String TAG = PersonViewHolder.class.getSimpleName();
+        private final String TAG = MealViewHolder.class.getSimpleName();
         public TextView name;
         public ImageView image;
 
-        public PersonViewHolder(@NonNull View itemView) {
+        public MealViewHolder(@NonNull View itemView) {
             super(itemView);
 
             name = itemView.findViewById(R.id.meal_list_item_name);
