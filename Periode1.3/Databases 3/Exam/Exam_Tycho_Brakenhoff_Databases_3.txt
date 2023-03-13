@@ -1,0 +1,46 @@
+Opgave 1a
+I. Dit is op tabel niveau aangezien het meerdere attributen effect en in de rest van de tabel op gecheckt wordt of het uniek is.
+II. Dit is op record niveau, als er een nieuwe record wordt toegevoegt dan gaat het eerst checken of de informatie wel klopt, het kijkt niet overal naar de tabel en kijk ook naar meer dan 1 attribuut.
+
+Opgave 1b
+1) Ja, voegt een nieuw boek toe zonder problemen.
+2) Nee, naam van het boek en de auteur moeten een unieke combinatie zijn, de constaint van eerder geeft aan dat het niet mag.
+3) Ja, de ISBN is gelijk aan 1000 en de uitleenperiode is groter dan 0 dus de constraint doet niks.
+4) Ja, de ISBN is hoger dan 1000 en de uitleenperiode is groter dan 0 dus de constraint doet niks.
+5) Ja, de combinatie van auteur naam en boek naam zijn uniek en wordt niet tegen gehouden door de constaint.
+6) Nee, de uitleenperiode moet groter dan 0 zijn en de constraint zal deze insert afvangen.
+7) Ja, de ISBN is hoger dan 1000 en de uitleenperiode is groter dan 0 dus de constraint doet niks. 
+8) Ja, De combinatie van auteur naam en boek naam is nog steeds uniek het werkt dus nog steeds.
+9) Nee, voorheen werd de insert van exemplaar met ID 1910 afgevangen omdat de uitleenperiode 0 was en bestaat dus niet in de database. Deze kan dus ook niet aangepast worden.
+
+Opgave 1c
+Dit ligt op database niveau aangezien de constraint naar meerdere tabellen gekeken moet om te bepalen of hij iets moet afvangen.
+
+Opgave 1d
+Lid
+INSERT
+PRINT  
+Uitlening
+
+Opgave 1e
+Bij het uitvoeren van een DELETE statement wordt alleen de "deleted" tabel gevuld. De "inserted" tabel wordt niet gebruikt bij een DELETE statement omdat er geen nieuwe rijen in de tabel worden toegevoegd, alleen bestaande rijen worden verwijderd.
+
+In dit geval bevat de "deleted" tabel alle 5 records van de Reservering-tabel voordat deze werden verwijderd door de trigger. De "inserted" tabel is leeg omdat er geen nieuwe rijen zijn toegevoegd.
+
+
+
+
+
+Opgave 4
+
+Wanneer het Isolation Level is ingesteld op READ UNCOMMITTED, kunnen transacties afwijkingen tonen van het ACID-principe:
+
+    Atomicity (A): Atomiciteit vereist dat een transactie als een enkele, ondeelbare eenheid wordt behandeld. Als een transactie wordt uitgevoerd met het Isolation Level op READ UNCOMMITTED, kunnen onbevestigde wijzigingen van andere transacties worden gelezen, waardoor de atomiciteit van de transactie in gevaar kan komen. Bijvoorbeeld, als een transactie A begint en deel uitmaakt van de transactie ongedaan maakt, maar voordat deze kan worden bevestigd, een transactie B de gewijzigde rijen leest, kan de transactie A niet worden teruggedraaid, wat resulteert in een inconsistentie in de database.
+
+    Consistency (C): Consistentie vereist dat de database zich altijd in een geldige staat bevindt. READ UNCOMMITTED kan inconsistenties veroorzaken omdat het transacties toestaat om onbevestigde wijzigingen van andere transacties te lezen. Bijvoorbeeld, als een transactie B een update uitvoert op een rij die wordt gelezen door een transactie A die op READ UNCOMMITTED draait, kan transactie A onjuiste of onvolledige gegevens lezen, waardoor de consistentie van de database in gevaar komt.
+
+    Isolation (I): Isolatie vereist dat transacties onafhankelijk van elkaar worden uitgevoerd, zonder invloed op elkaar. READ UNCOMMITTED kan isolatieproblemen veroorzaken omdat het toestaat dat transacties onbevestigde wijzigingen van andere transacties lezen. Dit kan leiden tot onverwachte resultaten, zoals racevoorwaarden en dirty reads.
+
+    Durability (D): Duurzaamheid vereist dat wijzigingen die zijn aangebracht door een bevestigde transactie, permanent zijn. READ UNCOMMITTED heeft geen invloed op de duurzaamheid van transacties, aangezien het alleen van invloed is op de leesbewerkingen van transacties en niet op hun schrijfbewerkingen.
+
+Over het algemeen wordt het Isolation Level READ UNCOMMITTED afgeraden in productiesystemen vanwege de risico's van inconsistentie en isolatieproblemen.
