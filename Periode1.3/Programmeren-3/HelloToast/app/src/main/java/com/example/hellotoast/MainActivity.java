@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.hellotoast.domain.Meal;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
     private Button openCounterBtn, counterPlusBtn, openCostumeListBtn;
     private final static String TAG = "MainActivity";
     private TextView mCounterOutput;
@@ -22,8 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-//        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_meal_list);
         Log.d(TAG, "onCreate aangeroepen");
 
         // Maak verbinding met de Buttons
@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        mCounterOutput.setText("" + this.mCounter);
 //
 //        openCostumeListBtn = findViewById(R.id.open_costume_list_view);
+//        openCostumeListBtn.setOnClickListener(this);
+//
+//        openCostumeListBtn = findViewById(R.id.meal_list_recycler_view);
 //        openCostumeListBtn.setOnClickListener(this);
 
         // Voorbeeld van gebruik van Meal class met Builder Pattern
@@ -59,34 +62,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         Log.d(TAG, "onClick aangeroepen");
 
-        switch (view.getId()){
-            case R.id.counter_plus_btn:
-                counterUp();
-                break;
-            case R.id.open_counter_activity_btn:
-                Log.d(TAG, "Start Open Counter activity");
-
-                Intent openCounterIntent = new Intent(this, CounterActivity.class);
-                Bundle extras = new Bundle();
-                extras.putInt(COUNTER_VALUE, this.mCounter);
-                openCounterIntent.putExtras(extras);
-                startActivity(openCounterIntent);
-                break;
-            case R.id.open_costume_list_view:
-                Log.d(TAG, "Open CostumeListView activity");
-                Intent openCostumeListIntent = new Intent(this, PersonListActivity.class);
-                startActivity(openCostumeListIntent);
-                break;
-            default:
-                Log.d(TAG, "Click nog niet geimpmelenteerd!");
-                break;
-        }
+//        switch (view.getId()) {
+//            case R.id.activity_meal_list:
+//                Log.d(TAG, "Start Open Counter activity");
+//
+//                Intent openCounterIntent = new Intent(this, CounterActivity.class);
+//                Bundle extras = new Bundle();
+//                extras.putInt(COUNTER_VALUE, this.mCounter);
+//                openCounterIntent.putExtras(extras);
+//                startActivity(openCounterIntent);
+//                break;
+//            case R.id.open_costume_list_view:
+//                Log.d(TAG, "Open CostumeListView activity");
+//                Intent openCostumeListIntent = new Intent(this, PersonListActivity.class);
+//                startActivity(openCostumeListIntent);
+//                break;
+//            default:
+//                Log.d(TAG, "Click nog niet geimpmelenteerd!");
+//                break;
+//        }
     }
 
-    private void counterUp(){
+    private void counterUp() {
         Log.d(TAG, "Counter Plus Button");
         this.mCounter++;
-        if(mCounterOutput != null) {
+        if (mCounterOutput != null) {
             this.mCounterOutput.setText("" + this.mCounter);
         }
     }
