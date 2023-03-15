@@ -1,4 +1,4 @@
-package com.example.hellotoast;
+package com.example.hellotoast.presentation;
 
 import android.content.Context;
 import android.util.Log;
@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.hellotoast.R;
 import com.example.hellotoast.domain.Meal;
 
 import java.util.ArrayList;

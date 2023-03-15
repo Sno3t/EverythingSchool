@@ -1,10 +1,12 @@
-package com.example.hellotoast;
+package com.example.hellotoast.presentation.viewmodel;
 
 import android.app.Application;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.example.hellotoast.datastorage.MealDao;
+import com.example.hellotoast.datastorage.MealRepository;
 import com.example.hellotoast.domain.Meal;
 
 import java.util.List;
@@ -17,33 +19,35 @@ import java.util.List;
 public class MealViewModel extends AndroidViewModel {
 
     private MealRepository mRepository;
+    private MealDao mealDao;
 
     private LiveData<List<Meal>> mAllMeals;
 
     public MealViewModel(Application application) {
         super(application);
         mRepository = new MealRepository(application);
-        mAllMeals = mRepository.getAllMeals();
+        mAllMeals = mRepository.getMeals();
     }
 
-    LiveData<List<Meal>> getAllMeals() {
+    public LiveData<List<Meal>> getAllMeals() {
         return mAllMeals;
     }
 
     public void insert(Meal meal) {
-        mRepository.insert(meal);
+        mealDao.insert(meal);
+//        mRepository.insert(meal);
     }
 
     public void deleteAll() {
-        mRepository.deleteAll();
+        mealDao.deleteAll();
     }
 
     public void deleteMeal(Meal meal) {
-        mRepository.deleteMeal(meal);
+        mealDao.deleteMeal(meal);
     }
 
     public void update(Meal meal) {
-        mRepository.update(meal);
+        mealDao.update(meal);
     }
 }
 

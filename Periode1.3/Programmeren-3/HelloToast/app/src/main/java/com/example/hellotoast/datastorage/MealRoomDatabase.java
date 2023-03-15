@@ -1,4 +1,4 @@
-package com.example.hellotoast;
+package com.example.hellotoast.datastorage;
 
 import android.content.Context;
 
@@ -10,6 +10,9 @@ import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.hellotoast.domain.Meal;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * WordRoomDatabase. Includes code to create the database.
@@ -25,6 +28,9 @@ public abstract class MealRoomDatabase extends RoomDatabase {
     public abstract MealDao mealDao();
 
     private static MealRoomDatabase INSTANCE;
+    private static final int NUMBER_OF_THREADS = 4;
+    static final ExecutorService databaseWriteExecutor =
+            Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
     public static MealRoomDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {

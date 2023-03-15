@@ -1,4 +1,4 @@
-package com.example.hellotoast;
+package com.example.hellotoast.presentation;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -9,7 +9,9 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.hellotoast.R;
 import com.example.hellotoast.domain.Meal;
+import com.example.hellotoast.presentation.viewmodel.MealViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +29,7 @@ public class MealListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meal_list);
+
 
         // De recyclerview opzetten zodat we meals in de lijst kunnen zien.
         mealListAdapter = new MealListAdapter(getApplicationContext());

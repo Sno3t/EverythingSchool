@@ -1,4 +1,4 @@
-package com.example.hellotoast;
+package com.example.hellotoast.datastorage;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -38,4 +38,8 @@ public interface MealDao {
 
     @Update
     void update(Meal... meals);
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void insertAll(List<Meal> meals);
+
 }

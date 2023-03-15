@@ -1,4 +1,4 @@
-package com.example.hellotoast;
+package com.example.hellotoast.presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.hellotoast.R;
 import com.example.hellotoast.domain.Meal;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {

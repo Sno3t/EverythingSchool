@@ -1,4 +1,4 @@
-package com.example.hellotoast;
+package com.example.hellotoast.datastorage;
 
 import androidx.room.TypeConverter;
 
