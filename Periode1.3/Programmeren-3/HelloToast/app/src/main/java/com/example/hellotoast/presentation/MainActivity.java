@@ -14,49 +14,34 @@ import com.example.hellotoast.domain.Meal;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button openCounterBtn, counterPlusBtn, openCostumeListBtn;
     private final static String TAG = "MainActivity";
-    private TextView mCounterOutput;
-    private int mCounter = 0;
     public static final String COUNTER_VALUE = "COUNTER_VALUE";
     public static final String NAME_VALUE = "NAME_VALUE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_meal_list);
         Log.d(TAG, "onCreate aangeroepen");
 
-        // Maak verbinding met de Buttons
-//        openCounterBtn = (Button) findViewById(R.id.open_counter_activity_btn);
-//        openCounterBtn.setOnClickListener(this);
-//
-//        counterPlusBtn = (Button) findViewById(R.id.counter_plus_btn);
-//        counterPlusBtn.setOnClickListener(this);
-//
-//        mCounterOutput = (TextView) findViewById(R.id.counter_output_txt);
-//        mCounterOutput.setText("" + this.mCounter);
-//
-//        openCostumeListBtn = findViewById(R.id.open_costume_list_view);
-//        openCostumeListBtn.setOnClickListener(this);
-//
-//        openCostumeListBtn = findViewById(R.id.meal_list_recycler_view);
-//        openCostumeListBtn.setOnClickListener(this);
+        goToMealListActivity();
 
-        // Voorbeeld van gebruik van Meal class met Builder Pattern
-        Meal newMeal = new Meal.Builder("Spaghetti", "Heerlijke pasta!", 6.75)
-                .setImageUrl("http://image.jpg")
-                .setIsActive(true)
-                .setMaxAmountOfParticipants(10)
-                .build();
-        // Voorbeeld: print de gebuilde Meal in logcat.
-        // Pas eventueel zelf de toString()-methode aan voor meer attributen!
-        Log.d(TAG, "newMeal: " + newMeal.toString());
-        // Voorbeeld setter: wijzig achteraf het aantal deelnemers
-        newMeal.setMaxAmountOfParticipants(5);
-        // Voorbeeld getter
-        String name = newMeal.getName();
+//        // Voorbeeld van gebruik van Meal class met Builder Pattern
+////        Meal newMeal = new Meal.Builder("Spaghetti", "Heerlijke pasta!", 6.75).build();
+//
+//        Meal newMeal = new Meal.Builder("aaa", "bbb", 6.66).build();
+//        // Voorbeeld: print de gebuilde Meal in logcat.
+//        // Pas eventueel zelf de toString()-methode aan voor meer attributen!
+//        Log.d(TAG, "newMeal: " + newMeal.toString());
+//        // Voorbeeld setter: wijzig achteraf het aantal deelnemers
+//        newMeal.setMaxAmountOfParticipants(5);
+//        // Voorbeeld getter
+//        String name = newMeal.getName();
 
+    }
+
+    public void goToMealListActivity() {
+        Intent intent = new Intent(this, MealListActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -82,13 +67,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                Log.d(TAG, "Click nog niet geimpmelenteerd!");
 //                break;
 //        }
-    }
-
-    private void counterUp() {
-        Log.d(TAG, "Counter Plus Button");
-        this.mCounter++;
-        if (mCounterOutput != null) {
-            this.mCounterOutput.setText("" + this.mCounter);
-        }
     }
 }

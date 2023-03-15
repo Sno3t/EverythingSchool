@@ -14,46 +14,89 @@ import retrofit2.Response;
 
 public class MealRepository {
 
-    private MealClient.MealApi mealApi;
+
     private MealDao mealDao;
-    private LiveData<List<Meal>> mealsLiveData;
+    private MealClient.MealApi mealApiService;
+    private LiveData<List<Meal>> allMeals;
 
     public MealRepository(Application application) {
-        mealApi = MealClient.getClient().create(MealClient.MealApi.class);
-        MealRoomDatabase mealDatabase = MealRoomDatabase.getDatabase(application);
-        mealDao = mealDatabase.mealDao();
-        mealsLiveData = mealDao.getAllMeals();
-        refreshMeals();
+        MealRoomDatabase db = MealRoomDatabase.getDatabase(application);
+        mealDao = db.mealDao();
+        mealApiService = MealClient.getClient().create(MealClient.MealApi.class);
+        allMeals = mealDao.getAllMeals();
     }
 
-    public LiveData<List<Meal>> getMeals() {
-        return mealsLiveData;
+    public LiveData<List<Meal>> getAllMeals() {
+//        refreshMeals();
+        return allMeals;
     }
 
-    public void refreshMeals() {
-        Call<List<Meal>> call = mealApi.getMeals();
-
-        call.enqueue(new Callback<List<Meal>>() {
-            @Override
-            public void onResponse(Call<List<Meal>> call, Response<List<Meal>> response) {
-                if (response.isSuccessful()) {
-                    List<Meal> meals = response.body();
-                    MealRoomDatabase.databaseWriteExecutor.execute(() -> {
-                        mealDao.deleteAll();
-                        mealDao.insertAll(meals);
-                    });
-                } else {
-                    // Handle error
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Meal>> call, Throwable t) {
-                // Handle error
-            }
+    public void insertAll(List<Meal> meals) {
+        MealRoomDatabase.databaseWriteExecutor.execute(() -> {
+            mealDao.insertAll(meals);
         });
     }
-}
+
+//    private void refreshMeals() {
+//        mealApiService.getAllMeals().enqueue(new Callback<List<Meal>>() {
+//            @Override
+//            public void onResponse(Call<List<Meal>> call, Response<List<Meal>> response) {
+//                if (response.isSuccessful()) {
+//                    MealRoomDatabase.databaseWriteExecutor.execute(() -> {
+//                        mealDao.deleteAll();
+//                        mealDao.insertAll(response.body());
+//                    });
+//                }
+//            }
+
+//            @Override
+//            public void onFailure(Call<List<Meal>> call, Throwable t) {
+//                // Do nothing - use cached data
+//            }
+//        });
+    }
+
+
+//    private MealClient.MealApi mealApi;
+//    private MealDao mealDao;
+//    private LiveData<List<Meal>> mealsLiveData;
+//
+//    public MealRepository(Application application) {
+//        mealApi = MealClient.getClient().create(MealClient.MealApi.class);
+//        MealRoomDatabase MealRoomDatabase = MealRoomDatabase.getDatabase(application);
+//        mealDao = MealRoomDatabase.mealDao();
+//        mealsLiveData = mealDao.getAllMeals();
+//        refreshMeals();
+//    }
+//
+//    public LiveData<List<Meal>> getMeals() {
+//        return mealsLiveData;
+//    }
+//
+//    public void refreshMeals() {
+//        Call<List<Meal>> call = mealApi.getMeals();
+//
+//        call.enqueue(new Callback<List<Meal>>() {
+//            @Override
+//            public void onResponse(Call<List<Meal>> call, Response<List<Meal>> response) {
+//                if (response.isSuccessful()) {
+//                    List<Meal> meals = response.body();
+//                    MealRoomDatabase.databaseWriteExecutor.execute(() -> {
+//                        mealDao.deleteAll();
+//                        mealDao.insertAll(meals);
+//                    });
+//                } else {
+//                    // Handle error
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<Meal>> call, Throwable t) {
+//                // Handle error
+//            }
+//        });
+//    }
+//}
 
 
 

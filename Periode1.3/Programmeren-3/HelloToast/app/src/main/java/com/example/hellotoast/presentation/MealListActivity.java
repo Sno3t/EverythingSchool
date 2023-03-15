@@ -32,7 +32,7 @@ public class MealListActivity extends AppCompatActivity {
 
 
         // De recyclerview opzetten zodat we meals in de lijst kunnen zien.
-        mealListAdapter = new MealListAdapter(getApplicationContext());
+        mealListAdapter = new MealListAdapter(getApplicationContext()); //
         mealListRecyclerView = findViewById(R.id.meal_list_recycler_view);
         mealListRecyclerView.setAdapter(mealListAdapter);
         mealListRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -40,6 +40,7 @@ public class MealListActivity extends AppCompatActivity {
         // LiveData opzetten en data ophalen uit het ViewModel.
         mealViewModel = new ViewModelProvider(this).get(MealViewModel.class);
         mealViewModel.getAllMeals().observe(this, new Observer<List<Meal>>() {
+
             @Override
             public void onChanged(List<Meal> meals) {
                 // Hier hebben we de lijst van meals vanuit de repository gekregen.
