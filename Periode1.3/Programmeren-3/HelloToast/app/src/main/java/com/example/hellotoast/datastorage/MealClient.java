@@ -18,7 +18,7 @@ public class MealClient {
         if (retrofit == null) {
             OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
             retrofit = new Retrofit.Builder()
-                    .baseUrl("http://shareameal-api.herokuapp.com/")
+                    .baseUrl("http://shareameal-api.herokuapp.com/api")
                     .client(okHttpClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
@@ -27,7 +27,7 @@ public class MealClient {
     }
 
     public interface MealApi {
-        @GET("api/meal")
+        @GET("/meal")
         Call<List<Meal>> getMeals();
     }
 

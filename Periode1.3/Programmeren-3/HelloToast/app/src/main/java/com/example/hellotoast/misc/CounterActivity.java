@@ -1,4 +1,4 @@
-package com.example.hellotoast;
+package com.example.hellotoast.misc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.hellotoast.R;
 import com.example.hellotoast.presentation.MainActivity;
 
 public class CounterActivity extends AppCompatActivity {

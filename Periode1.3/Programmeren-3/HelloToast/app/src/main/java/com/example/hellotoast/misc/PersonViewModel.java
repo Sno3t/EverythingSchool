@@ -1,9 +1,9 @@
-package com.example.hellotoast;
+package com.example.hellotoast.misc;
 
 import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import com.example.hellotoast.domain.Person;
+
 import java.util.List;
 
 /**

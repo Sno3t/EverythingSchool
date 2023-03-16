@@ -28,14 +28,14 @@ public class MealListAdapter extends RecyclerView.Adapter<MealListAdapter.MealVi
     private MealRepository mealRepository;
     private LayoutInflater mInflater;
 
-    public MealListAdapter(Context context) { //
-        mInflater = LayoutInflater.from(context);
+    public MealListAdapter() { //Context context
+//        mInflater = LayoutInflater.from(context);
 
     }
 
 
 //    @NonNull
-//    @Override
+//    @Override // initial
 //    public MealViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 //        Log.d(TAG, "onCreateViewHolder called");
 //
@@ -44,7 +44,7 @@ public class MealListAdapter extends RecyclerView.Adapter<MealListAdapter.MealVi
 //    }
 
     @NonNull
-    @Override
+    @Override // new
     public MealViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Log.d(TAG, "onCreateViewHolder");
         // Inflate an item view.
@@ -58,7 +58,9 @@ public class MealListAdapter extends RecyclerView.Adapter<MealListAdapter.MealVi
 
         Meal currentMeal = mMeals.get(position);
         holder.name.setText(currentMeal.getName());
-//        holder.mealDescriptionTextView.setText(currentMeal.getDescription());
+        holder.description.setText(currentMeal.getDescription());
+//        holder.image.setImageResource(currentMeal.getImageUrl());
+
 
 //        Meal meal = mMeals.get(position);
 //        String name = new StringBuilder()
@@ -89,14 +91,14 @@ public class MealListAdapter extends RecyclerView.Adapter<MealListAdapter.MealVi
 
         private final String TAG = MealViewHolder.class.getSimpleName();
         public TextView name;
-//        public TextView description;
+        public TextView description;
         public ImageView image;
 
         public MealViewHolder(@NonNull View itemView) {
             super(itemView);
 
             name = itemView.findViewById(R.id.meal_list_item_name);
-//            name = itemView.findViewById(R.id.meal);
+            description = itemView.findViewById(R.id.meal_list_description);
             image = itemView.findViewById(R.id.meal_list_item_image);
 
             itemView.setOnClickListener(this);

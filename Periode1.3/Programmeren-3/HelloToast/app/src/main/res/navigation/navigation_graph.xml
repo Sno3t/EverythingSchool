@@ -12,7 +12,7 @@
         tools:layout="@layout/activity_main" />
     <activity
         android:id="@+id/counterActivity"
-        android:name="com.example.hellotoast.CounterActivity"
+        android:name="com.example.hellotoast.misc.CounterActivity"
         android:label="activity_counter"
         tools:layout="@layout/activity_counter" />
 </navigation>

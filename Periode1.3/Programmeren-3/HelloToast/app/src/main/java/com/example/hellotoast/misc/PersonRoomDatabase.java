@@ -1,4 +1,4 @@
-package com.example.hellotoast;
+package com.example.hellotoast.misc;
 
 import android.content.Context;
 import androidx.annotation.NonNull;
@@ -6,7 +6,6 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
-import com.example.hellotoast.domain.Person;
 
 /**
  * WordRoomDatabase. Includes code to create the database.

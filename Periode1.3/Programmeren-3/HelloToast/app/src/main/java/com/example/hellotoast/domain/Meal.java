@@ -11,8 +11,6 @@ import java.util.Date;
 @Entity(tableName = "meal_table")
 public class Meal {
 
-
-
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     private int id;
@@ -72,6 +70,7 @@ public class Meal {
     private ArrayList<String> participants;
 
     public Meal() {
+
     }
 
     public Meal(Builder builder) {

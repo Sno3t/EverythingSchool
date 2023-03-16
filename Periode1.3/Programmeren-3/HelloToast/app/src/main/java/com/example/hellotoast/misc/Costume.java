@@ -1,4 +1,4 @@
-package com.example.hellotoast.domain;
+package com.example.hellotoast.misc;
 
 public class Costume {
     private int image;

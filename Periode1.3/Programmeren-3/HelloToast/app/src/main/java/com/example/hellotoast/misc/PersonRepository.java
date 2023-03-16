@@ -1,16 +1,10 @@
-package com.example.hellotoast;
+package com.example.hellotoast.misc;
 
 import android.app.Application;
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-
-import com.example.hellotoast.domain.Person;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -25,7 +25,7 @@ public interface MealDao {
     void insert(Meal meal);
 
     @Query("DELETE FROM meal_table")
-    void deleteAll();
+    void deleteAllMeals();
 
     @Delete
     void deleteMeal(Meal meal);

@@ -1,7 +1,6 @@
-package com.example.hellotoast;
+package com.example.hellotoast.misc;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,19 +9,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.hellotoast.domain.Costume;
-import com.example.hellotoast.domain.Meal;
-import com.example.hellotoast.presentation.MealListAdapter;
-import com.example.hellotoast.presentation.viewmodel.MealViewModel;
+import com.example.hellotoast.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CostumeListAdapter extends RecyclerView.Adapter<CostumeListAdapter.CostumeViewHolder> {
 

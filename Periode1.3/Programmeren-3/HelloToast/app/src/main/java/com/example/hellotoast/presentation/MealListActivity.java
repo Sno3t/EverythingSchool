@@ -10,11 +10,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hellotoast.R;
+import com.example.hellotoast.datastorage.MealClient;
+import com.example.hellotoast.datastorage.MealRepository;
 import com.example.hellotoast.domain.Meal;
 import com.example.hellotoast.presentation.viewmodel.MealViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MealListActivity extends AppCompatActivity {
 
@@ -30,16 +36,22 @@ public class MealListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meal_list);
 
-
         // De recyclerview opzetten zodat we meals in de lijst kunnen zien.
-        mealListAdapter = new MealListAdapter(getApplicationContext()); //
-        mealListRecyclerView = findViewById(R.id.meal_list_recycler_view);
-        mealListRecyclerView.setAdapter(mealListAdapter);
-        mealListRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        RecyclerView recyclerView = findViewById(R.id.meal_list_recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(mealListAdapter);
+
+
+
+//        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://shareameal-api.herokuapp.com/api").addConverterFactory(GsonConverterFactory.create()).build();
+//        MealClient mealClient = retrofit.create(MealClient.class);
+//        Call<List<Meal>> call = MealClient.MealApi.getMeals();
+
 
         // LiveData opzetten en data ophalen uit het ViewModel.
         mealViewModel = new ViewModelProvider(this).get(MealViewModel.class);
         mealViewModel.getAllMeals().observe(this, new Observer<List<Meal>>() {
+
 
             @Override
             public void onChanged(List<Meal> meals) {

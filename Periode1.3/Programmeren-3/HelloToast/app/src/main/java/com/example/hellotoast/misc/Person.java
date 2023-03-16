@@ -1,4 +1,4 @@
-package com.example.hellotoast.domain;
+package com.example.hellotoast.misc;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

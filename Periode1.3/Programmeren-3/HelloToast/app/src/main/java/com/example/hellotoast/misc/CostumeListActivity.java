@@ -1,4 +1,4 @@
-package com.example.hellotoast;
+package com.example.hellotoast.misc;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.example.hellotoast.domain.Costume;
+import com.example.hellotoast.R;
 
 import java.util.ArrayList;
 
