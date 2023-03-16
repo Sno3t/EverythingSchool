@@ -59,7 +59,7 @@ public class MealListActivity extends AppCompatActivity {
                 // Lijst van meals toevoegen aan de recyclerview
                 Log.d(TAG, "Observer.onChanged aangeroepen");
                 Log.d(TAG, "We hebben " + meals.size() + " meals");
-                mealListAdapter.setData((ArrayList<Meal>) meals);
+                mealListAdapter.setData((List<Meal>) meals);
             }
         });
     }

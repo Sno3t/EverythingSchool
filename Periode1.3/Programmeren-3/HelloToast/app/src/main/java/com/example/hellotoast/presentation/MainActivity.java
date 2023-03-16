@@ -3,6 +3,8 @@ package com.example.hellotoast.presentation;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,12 +33,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setContentView(R.layout.activity_main);
 
+        RecyclerView recyclerView = findViewById(R.id.meal_list_recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
+
+        MealListAdapter adapter = new MealListAdapter();
+        recyclerView.setAdapter(adapter);
+
         mealViewModel = new ViewModelProvider(this).get(MealViewModel.class);
         mealViewModel.getAllMeals().observe(this, new Observer<List<Meal>>() {
             @Override
             public void onChanged(List<Meal> meals) {
                 //update recyclerview
-                Toast.makeText(MainActivity.this, "onChanged", Toast.LENGTH_LONG).show();
+//                Toast.makeText(MainActivity.this, "onChanged", Toast.LENGTH_LONG).show();
+                adapter.setData(meals);
             }
         });
     }

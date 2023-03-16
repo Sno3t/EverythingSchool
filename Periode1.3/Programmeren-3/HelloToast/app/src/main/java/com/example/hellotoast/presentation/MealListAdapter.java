@@ -23,7 +23,7 @@ import java.util.List;
 public class MealListAdapter extends RecyclerView.Adapter<MealListAdapter.MealViewHolder> {
 
     private static final String TAG = MealListAdapter.class.getSimpleName();
-    private List<Meal> mMeals;
+    private List<Meal> meals = new ArrayList<>();
 
     private MealRepository mealRepository;
     private LayoutInflater mInflater;
@@ -34,35 +34,27 @@ public class MealListAdapter extends RecyclerView.Adapter<MealListAdapter.MealVi
     }
 
 
-//    @NonNull
-//    @Override // initial
-//    public MealViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//        Log.d(TAG, "onCreateViewHolder called");
-//
-//        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.meal_list_item, parent, false);
-//        return new MealViewHolder(view);
-//    }
-
     @NonNull
-    @Override // new
+    @Override // initial
     public MealViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Log.d(TAG, "onCreateViewHolder");
-        // Inflate an item view.
-        View mItemView = mInflater.inflate(R.layout.meal_list_item, parent, false);
-        return new MealViewHolder(mItemView);
+        Log.d(TAG, "onCreateViewHolder called");
+
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.meal_list_item, parent, false);
+        return new MealViewHolder(view);
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull MealViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder position " + position);
 
-        Meal currentMeal = mMeals.get(position);
+        Meal currentMeal = meals.get(position);
         holder.name.setText(currentMeal.getName());
         holder.description.setText(currentMeal.getDescription());
 //        holder.image.setImageResource(currentMeal.getImageUrl());
 
 
-//        Meal meal = mMeals.get(position);
+//        Meal meal = meals.get(position);
 //        String name = new StringBuilder()
 //                .append(meal.getName())
 //                .append(" ")
@@ -76,14 +68,15 @@ public class MealListAdapter extends RecyclerView.Adapter<MealListAdapter.MealVi
 
     @Override
     public int getItemCount() {
-        return mMeals != null ? mMeals.size() : 0;
+//        return meals != null ? meals.size() : 0;
+        return meals.size();
     }
 
-    public void setData(ArrayList<Meal> mMeals) {
-        Log.d(TAG, "setData(mMeals)");
-        Log.d(TAG, String.valueOf(mMeals.size()));
+    public void setData(List<Meal> meals) {
+        Log.d(TAG, "setData(meals)");
+        Log.d(TAG, String.valueOf(meals.size()));
 
-        this.mMeals = mMeals;
+        this.meals = meals;
         notifyDataSetChanged();
     }
 
@@ -97,9 +90,10 @@ public class MealListAdapter extends RecyclerView.Adapter<MealListAdapter.MealVi
         public MealViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            image = itemView.findViewById(R.id.meal_list_item_image);
             name = itemView.findViewById(R.id.meal_list_item_name);
             description = itemView.findViewById(R.id.meal_list_description);
-            image = itemView.findViewById(R.id.meal_list_item_image);
+
 
             itemView.setOnClickListener(this);
         }
