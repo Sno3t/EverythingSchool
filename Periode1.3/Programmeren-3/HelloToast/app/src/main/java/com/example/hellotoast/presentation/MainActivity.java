@@ -1,6 +1,8 @@
 package com.example.hellotoast.presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,36 +10,40 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hellotoast.R;
 import com.example.hellotoast.domain.Meal;
+import com.example.hellotoast.presentation.viewmodel.MealViewModel;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private final static String TAG = "MainActivity";
-    public static final String COUNTER_VALUE = "COUNTER_VALUE";
-    public static final String NAME_VALUE = "NAME_VALUE";
+
+    private MealViewModel mealViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate aangeroepen");
 
-        goToMealListActivity();
+        setContentView(R.layout.activity_main);
 
-//        // Voorbeeld van gebruik van Meal class met Builder Pattern
-////        Meal newMeal = new Meal.Builder("Spaghetti", "Heerlijke pasta!", 6.75).build();
-//
-//        Meal newMeal = new Meal.Builder("aaa", "bbb", 6.66).build();
-//        // Voorbeeld: print de gebuilde Meal in logcat.
-//        // Pas eventueel zelf de toString()-methode aan voor meer attributen!
-//        Log.d(TAG, "newMeal: " + newMeal.toString());
-//        // Voorbeeld setter: wijzig achteraf het aantal deelnemers
-//        newMeal.setMaxAmountOfParticipants(5);
-//        // Voorbeeld getter
-//        String name = newMeal.getName();
-
+        mealViewModel = new ViewModelProvider(this).get(MealViewModel.class);
+        mealViewModel.getAllMeals().observe(this, new Observer<List<Meal>>() {
+            @Override
+            public void onChanged(List<Meal> meals) {
+                //update recyclerview
+                Toast.makeText(MainActivity.this, "onChanged", Toast.LENGTH_LONG).show();
+            }
+        });
     }
+
+//        goToMealListActivity();
+
+
 
     public void goToMealListActivity() {
         Intent intent = new Intent(this, MealListActivity.class);
