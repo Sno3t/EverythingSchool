@@ -34,7 +34,7 @@ public class MealListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_meal_list);
+        setContentView(R.layout.activity_main);
 
         // De recyclerview opzetten zodat we meals in de lijst kunnen zien.
         RecyclerView recyclerView = findViewById(R.id.meal_list_recycler_view);

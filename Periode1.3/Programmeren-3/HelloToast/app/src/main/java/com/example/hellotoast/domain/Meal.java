@@ -73,6 +73,22 @@ public class Meal {
 
     }
 
+    public Meal(int id, @NonNull String name, @NonNull String description, @NonNull Boolean isActive, @NonNull Boolean isVega, @NonNull Boolean isVegan, @NonNull Boolean isToTakeHome, @NonNull Long dateTime, int maxAmountOfParticipants, double price, @NonNull String imageUrl, @NonNull ArrayList<String> allergenes, @NonNull ArrayList<String> participants) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.isActive = isActive;
+        this.isVega = isVega;
+        this.isVegan = isVegan;
+        this.isToTakeHome = isToTakeHome;
+        this.dateTime = dateTime;
+        this.maxAmountOfParticipants = maxAmountOfParticipants;
+        this.price = price;
+        this.imageUrl = imageUrl;
+        this.allergenes = allergenes;
+        this.participants = participants;
+    }
+
     public Meal(Builder builder) {
         this.id = id;
         this.name = name;

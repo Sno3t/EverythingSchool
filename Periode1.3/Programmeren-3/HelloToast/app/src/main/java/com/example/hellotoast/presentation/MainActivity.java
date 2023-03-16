@@ -42,10 +42,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mealViewModel = new ViewModelProvider(this).get(MealViewModel.class);
         mealViewModel.getAllMeals().observe(this, new Observer<List<Meal>>() {
+
+
             @Override
             public void onChanged(List<Meal> meals) {
                 //update recyclerview
-//                Toast.makeText(MainActivity.this, "onChanged", Toast.LENGTH_LONG).show();
+                Log.d(TAG, "onChanged called");
                 adapter.setData(meals);
             }
         });

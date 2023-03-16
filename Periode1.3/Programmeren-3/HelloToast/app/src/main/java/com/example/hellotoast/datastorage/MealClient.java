@@ -1,5 +1,7 @@
 package com.example.hellotoast.datastorage;
 
+import android.util.Log;
+
 import com.example.hellotoast.domain.Meal;
 
 import java.util.List;
@@ -13,6 +15,7 @@ import retrofit2.http.GET;
 public class MealClient {
 
     private static Retrofit retrofit = null;
+    private final static String TAG = "MealClient";
 
     public static Retrofit getClient() {
         if (retrofit == null) {
@@ -23,6 +26,8 @@ public class MealClient {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
+
+
         return retrofit;
     }
 
