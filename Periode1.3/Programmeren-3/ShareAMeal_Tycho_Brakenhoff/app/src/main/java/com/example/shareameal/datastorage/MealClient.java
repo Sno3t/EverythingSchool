@@ -27,8 +27,9 @@ public class MealClient {
         Log.i(TAG, "mealClient called");
         return retrofit;
     }
+
     public interface MealApi {
-        @GET ("meal")
+        @GET("meal")
         Call<JsonObject> getMeals();
     }
 

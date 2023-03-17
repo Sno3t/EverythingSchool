@@ -18,7 +18,7 @@
             android:name=".presentation.DetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".AddMealActivity"
+            android:name=".presentation.AddMealActivity"
             android:exported="false"
             android:parentActivityName=".presentation.MainActivity" />
         <activity

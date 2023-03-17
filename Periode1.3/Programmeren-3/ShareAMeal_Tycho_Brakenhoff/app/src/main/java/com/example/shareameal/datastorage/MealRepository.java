@@ -46,11 +46,13 @@ public class MealRepository {
                     JsonObject jsonObject = response.body();
                     JsonArray jsonArray = jsonObject.getAsJsonArray("result");
                     Gson gson = new Gson();
-                    Type type = new TypeToken<List<Meal>>() {}.getType();
+                    Type type = new TypeToken<List<Meal>>() {
+                    }.getType();
                     List<Meal> mealList = gson.fromJson(jsonArray, type);
                     mealDao.insertAllBackground(mealList);
                 }
             }
+
             @Override
             public void onFailure(Call<JsonObject> call, Throwable t) {
                 Log.d(TAG, "insertMeals failure");
@@ -58,7 +60,6 @@ public class MealRepository {
             }
         });
     }
-
 
 
     public LiveData<List<Meal>> getAllMeals() {

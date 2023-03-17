@@ -296,7 +296,6 @@ public class Meal implements Serializable, Parcelable {
     public void setMaxAmountOfParticipants(int maxAmountOfParticipants) {
         this.maxAmountOfParticipants = maxAmountOfParticipants;
     }
-
     public void setPrice(Double price) {
         this.price = price;
     }

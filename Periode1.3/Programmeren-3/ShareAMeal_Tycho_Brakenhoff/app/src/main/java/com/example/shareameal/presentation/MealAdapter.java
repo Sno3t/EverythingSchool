@@ -16,7 +16,6 @@ import com.bumptech.glide.Glide;
 import com.example.shareameal.domain.Meal;
 import com.example.shareameal.R;
 
-
 public class MealAdapter extends ListAdapter<Meal, MealAdapter.MealHolder> {
 
     private static final String TAG = MealAdapter.class.getSimpleName();

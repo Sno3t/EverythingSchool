@@ -1,4 +1,4 @@
-package com.example.shareameal;
+package com.example.shareameal.presentation;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,8 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.shareameal.R;
 
 public class AddMealActivity extends AppCompatActivity {
 
@@ -70,6 +72,5 @@ public class AddMealActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-
     }
 }

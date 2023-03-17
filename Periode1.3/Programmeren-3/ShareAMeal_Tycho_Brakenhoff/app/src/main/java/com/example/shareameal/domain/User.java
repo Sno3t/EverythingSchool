@@ -39,15 +39,15 @@ import java.util.List;
 
 public class User {
 
-    private List<String> roles;
-    private boolean isActive;
-    private String phoneNumber;
     private int id;
     private String firstName;
     private String lastName;
+    private String emailAdress;
     private String street;
     private String city;
-    private String emailAdress;
+    private List<String> roles;
+    private boolean isActive;
+    private String phoneNumber;
 
     public User(List<String> roles, boolean isActive, String phoneNumber, int id, String firstName, String lastName, String street, String city, String emailAdress) {
         this.roles = roles;

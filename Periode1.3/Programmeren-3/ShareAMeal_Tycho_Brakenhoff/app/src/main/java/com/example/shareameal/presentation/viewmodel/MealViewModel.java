@@ -46,7 +46,7 @@ public class MealViewModel extends AndroidViewModel {
         mealRepository.update(meal);
     }
 
-    public void insertMeals(){
+    public void insertMeals() {
         mealRepository.insertMeals();
     }
 }

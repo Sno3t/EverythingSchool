@@ -19,7 +19,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.shareameal.AddMealActivity;
 import com.example.shareameal.domain.Meal;
 import com.example.shareameal.presentation.viewmodel.MealViewModel;
 import com.example.shareameal.R;

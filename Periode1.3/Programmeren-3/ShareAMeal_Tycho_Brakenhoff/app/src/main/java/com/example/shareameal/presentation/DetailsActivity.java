@@ -60,6 +60,7 @@ public class DetailsActivity extends AppCompatActivity {
         detailMealCheckBoxIsVegan = findViewById(R.id.detail_check_box_isVegan);
         detailMealMaxAmountOfParticipants = findViewById(R.id.detail_meal_maxAmountOfParticipants);
 
+        //SetImage and placeholder
         Glide.with(this)
                 .load(meal.getImageUrl())
                 .placeholder(R.drawable.food_placeholder)
