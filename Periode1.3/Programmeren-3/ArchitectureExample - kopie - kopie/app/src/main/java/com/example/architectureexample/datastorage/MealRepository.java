@@ -56,6 +56,7 @@ public class MealRepository {
             @Override
             public void onFailure(Call<JsonObject> call, Throwable t) {
                 Log.d(TAG, "insertMeals failure");
+                Log.d(TAG, t.getMessage());
             }
         });
     }

@@ -35,36 +35,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//
-//        RecyclerView recyclerView = findViewById(R.id.meal_list_recycler_view);
-//        recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
-//        recyclerView.setHasFixedSize(true);
-//
-//        MealAdapter adapter = new MealAdapter();
-//        recyclerView.setAdapter(adapter);
-//
-//
-//        mealViewModel = new ViewModelProvider(this).get(MealViewModel.class);
-//        mealViewModel.insertMeals();
-//        mealViewModel.getAllMeals().observe(this, new Observer<List<Meal>>() {
-//            @Override
-//            public void onChanged(List<Meal> meals) {
-//                Log.d(TAG, "onChanged called");
-//                //Updates the recyclerview
-//                adapter.submitList(meals);
-//            }
-//        });
-
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
         RecyclerView recyclerView = findViewById(R.id.meal_list_recycler_view);
-        //LinearLayoutManager moet gridlayoutmanager zijn
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
         recyclerView.setHasFixedSize(true);
 
-        final MealAdapter adapter = new MealAdapter();
+        MealAdapter adapter = new MealAdapter();
         recyclerView.setAdapter(adapter);
 
 
@@ -73,11 +51,33 @@ public class MainActivity extends AppCompatActivity {
         mealViewModel.getAllMeals().observe(this, new Observer<List<Meal>>() {
             @Override
             public void onChanged(List<Meal> meals) {
-                //update RecyclerView
-                //Toast.makeText(MainActivity.this, "onChanged", Toast.LENGTH_SHORT).show();
+                Log.d(TAG, "onChanged called");
+                //Updates the recyclerview
                 adapter.submitList(meals);
             }
         });
+
+
+//        RecyclerView recyclerView = findViewById(R.id.meal_list_recycler_view);
+//        //LinearLayoutManager moet gridlayoutmanager zijn
+//        recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
+//        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        recyclerView.setHasFixedSize(true);
+//
+//        final MealAdapter adapter = new MealAdapter();
+//        recyclerView.setAdapter(adapter);
+//
+//
+//        mealViewModel = new ViewModelProvider(this).get(MealViewModel.class);
+//        mealViewModel.insertMeals();
+//        mealViewModel.getAllMeals().observe(this, new Observer<List<Meal>>() {
+//            @Override
+//            public void onChanged(List<Meal> meals) {
+//                //update RecyclerView
+//                //Toast.makeText(MainActivity.this, "onChanged", Toast.LENGTH_SHORT).show();
+//                adapter.submitList(meals);
+//            }
+//        });
 
 
         //Dit wordt de on click op de meal
