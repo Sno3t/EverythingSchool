@@ -1,4 +1,4 @@
-package com.example.architectureexample.presentation.viewmodel;
+package com.example.shareameal.presentation.viewmodel;
 
 import android.app.Application;
 
@@ -6,8 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.example.architectureexample.datastorage.MealRepository;
-import com.example.architectureexample.domain.Meal;
+import com.example.shareameal.datastorage.MealRepository;
+import com.example.shareameal.domain.Meal;
 
 import java.util.List;
 

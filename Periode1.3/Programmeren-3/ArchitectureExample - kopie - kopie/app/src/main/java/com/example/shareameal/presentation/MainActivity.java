@@ -1,8 +1,10 @@
-package com.example.architectureexample.presentation;
+package com.example.shareameal.presentation;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.compose.runtime.Composable;
+import androidx.compose.ui.graphics.painter.Painter;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -17,8 +19,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.architectureexample.domain.Meal;
-import com.example.architectureexample.presentation.viewmodel.MealViewModel;
+import com.example.shareameal.domain.Meal;
+import com.example.shareameal.presentation.viewmodel.MealViewModel;
 import com.example.shareameal.R;
 
 //import com.example.architectureexample.R;
@@ -38,16 +40,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate called");
         setContentView(R.layout.activity_main);
 
+        // Initialize the RecyclerView.
         RecyclerView recyclerView = findViewById(R.id.meal_list_recycler_view);
+
+        // Set the layout manager to the recyclerview
         recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
         recyclerView.setHasFixedSize(true);
 
         MealAdapter adapter = new MealAdapter();
         recyclerView.setAdapter(adapter);
 
-
+        // Initialize the adapter and set it to the RecyclerView.
         mealViewModel = new ViewModelProvider(this).get(MealViewModel.class);
         mealViewModel.insertMeals();
         mealViewModel.getAllMeals().observe(this, new Observer<List<Meal>>() {

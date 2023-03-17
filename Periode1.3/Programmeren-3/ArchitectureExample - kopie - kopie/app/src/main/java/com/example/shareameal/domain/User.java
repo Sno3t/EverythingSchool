@@ -33,7 +33,7 @@
 //
 //
 //}
-package com.example.architectureexample.domain;
+package com.example.shareameal.domain;
 
 import java.util.List;
 

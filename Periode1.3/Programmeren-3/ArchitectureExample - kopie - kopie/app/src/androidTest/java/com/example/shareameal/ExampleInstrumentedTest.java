@@ -1,4 +1,4 @@
-package com.example.architectureexample;
+package com.example.shareameal;
 
 import android.content.Context;
 

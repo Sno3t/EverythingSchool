@@ -1,4 +1,4 @@
-package com.example.architectureexample.datastorage;
+package com.example.shareameal.datastorage;
 
 import com.google.gson.JsonObject;
 

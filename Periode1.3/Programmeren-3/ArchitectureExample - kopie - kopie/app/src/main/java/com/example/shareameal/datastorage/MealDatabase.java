@@ -1,4 +1,4 @@
-package com.example.architectureexample.datastorage;
+package com.example.shareameal.datastorage;
 
 import android.content.Context;
 
@@ -7,7 +7,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
-import com.example.architectureexample.domain.Meal;
+import com.example.shareameal.domain.Meal;
 
 
 @Database(entities = {Meal.class}, version = 2)

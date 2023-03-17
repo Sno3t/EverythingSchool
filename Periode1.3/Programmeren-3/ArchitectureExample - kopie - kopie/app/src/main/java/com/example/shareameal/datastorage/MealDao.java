@@ -1,4 +1,4 @@
-package com.example.architectureexample.datastorage;//package com.example.hellotoast.datastorage;
+package com.example.shareameal.datastorage;//package com.example.hellotoast.datastorage;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -9,7 +9,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 
-import com.example.architectureexample.domain.Meal;
+import com.example.shareameal.domain.Meal;
 
 import java.util.List;
 

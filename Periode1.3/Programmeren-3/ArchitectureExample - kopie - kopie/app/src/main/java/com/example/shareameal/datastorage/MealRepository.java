@@ -1,4 +1,4 @@
-package com.example.architectureexample.datastorage;
+package com.example.shareameal.datastorage;
 
 
 import android.app.Application;
@@ -7,7 +7,7 @@ import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 
-import com.example.architectureexample.domain.Meal;
+import com.example.shareameal.domain.Meal;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;

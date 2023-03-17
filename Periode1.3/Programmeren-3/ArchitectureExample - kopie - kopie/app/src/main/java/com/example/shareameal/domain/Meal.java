@@ -1,4 +1,4 @@
-package com.example.architectureexample.domain;
+package com.example.shareameal.domain;
 
 //import androidx.room.Entity;
 //import androidx.room.Ignore;

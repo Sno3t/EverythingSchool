@@ -1,8 +1,8 @@
-package com.example.architectureexample.datastorage;
+package com.example.shareameal.datastorage;
 
 import androidx.room.TypeConverter;
 
-import com.example.architectureexample.domain.User;
+import com.example.shareameal.domain.User;
 import com.google.gson.Gson;
 
 public class Converters {

@@ -1,4 +1,4 @@
-package com.example.architectureexample.presentation;
+package com.example.shareameal.presentation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.architectureexample.domain.Meal;
+import com.example.shareameal.domain.Meal;
 import com.example.shareameal.R;
 
 

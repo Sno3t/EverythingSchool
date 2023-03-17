@@ -1,4 +1,4 @@
-package com.example.architectureexample;
+package com.example.shareameal;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,8 +12,6 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.example.shareameal.R;
 
 
 //IK MOET VAN DEZE ACTIVITY OOK NOG EEN ANDERE ACTIVITY MAKEN MET EEN X VOOR SLUITEN
