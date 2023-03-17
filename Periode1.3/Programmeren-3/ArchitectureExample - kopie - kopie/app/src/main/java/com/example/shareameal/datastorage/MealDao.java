@@ -34,7 +34,7 @@ public interface MealDao {
     @Query("SELECT * from meal_table LIMIT 1")
     List<Meal> getAnyMeal();
 
-    @Query("SELECT * from meal_table ORDER BY name ASC")
+    @Query("SELECT * from meal_table ORDER BY createDate ASC")
     LiveData<List<Meal>> getAllMeals();
 
     @Update

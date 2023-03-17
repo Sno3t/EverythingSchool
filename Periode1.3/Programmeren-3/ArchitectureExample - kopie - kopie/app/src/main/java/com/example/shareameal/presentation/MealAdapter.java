@@ -30,7 +30,6 @@ public class MealAdapter extends ListAdapter<Meal, MealAdapter.MealHolder> {
     private static final DiffUtil.ItemCallback<Meal> DIFF_CALLBACK = new DiffUtil.ItemCallback<Meal>() {
         @Override
         public boolean areItemsTheSame(@NonNull Meal oldItem, @NonNull Meal newItem) {
-            //  return oldItem.getId() == newItem.getId();
             return true;
         }
 
@@ -53,16 +52,17 @@ public class MealAdapter extends ListAdapter<Meal, MealAdapter.MealHolder> {
     public void onBindViewHolder(@NonNull MealHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder position " + position);
 
+        // Insert data onto the cards
         Meal currentMeal = getItem(position);
-
         holder.textViewName.setText(currentMeal.getName());
-
         holder.textViewDescription.setText(currentMeal.getDescription());
 
         Glide.with(holder.imageViewImage)
                 .load(currentMeal.getImageUrl())
                 .placeholder(R.drawable.food_placeholder)
                 .into(holder.imageViewImage);
+
+
     }
 
     public Meal getMealAt(int position) {
@@ -70,8 +70,6 @@ public class MealAdapter extends ListAdapter<Meal, MealAdapter.MealHolder> {
     }
 
     class MealHolder extends RecyclerView.ViewHolder {
-        //Meal class implemeneteren
-
         private TextView textViewName;
         private TextView textViewDescription;
         private ImageView imageViewImage;
@@ -82,29 +80,28 @@ public class MealAdapter extends ListAdapter<Meal, MealAdapter.MealHolder> {
             textViewDescription = itemView.findViewById(R.id.meal_list_description);
             imageViewImage = itemView.findViewById(R.id.meal_list_item_image);
 
-
-            //DIT IS VOOR NOTE
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     int position = getAdapterPosition();
                     if (listener != null && position != RecyclerView.NO_POSITION) {
-                        listener.onItemClick(getItem(position));
+                        listener.onItemClick(position);
                     }
                 }
             });
         }
     }
 
-
     public interface OnItemClickListener {
-        void onItemClick(Meal meal);
+        void onItemClick(int position);
     }
+
+//    public interface OnItemClickListener {
+//        void onItemClick(Meal meal);
+//    }
 
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
     }
-
-
 
 }

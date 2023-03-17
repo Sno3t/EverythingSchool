@@ -1,5 +1,7 @@
 package com.example.shareameal.datastorage;
 
+import android.util.Log;
+
 import com.google.gson.JsonObject;
 
 import okhttp3.OkHttpClient;
@@ -22,6 +24,7 @@ public class MealClient {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
+        Log.i(TAG, "mealClient called");
         return retrofit;
     }
     public interface MealApi {
