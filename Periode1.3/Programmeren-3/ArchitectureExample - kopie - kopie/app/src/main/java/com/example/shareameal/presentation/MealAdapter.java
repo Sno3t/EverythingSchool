@@ -61,6 +61,7 @@ public class MealAdapter extends ListAdapter<Meal, MealAdapter.MealHolder> {
 
         Glide.with(holder.imageViewImage)
                 .load(currentMeal.getImageUrl())
+                .placeholder(R.drawable.food_placeholder)
                 .into(holder.imageViewImage);
     }
 
