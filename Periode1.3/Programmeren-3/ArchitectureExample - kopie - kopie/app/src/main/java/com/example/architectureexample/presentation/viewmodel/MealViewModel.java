@@ -1,4 +1,4 @@
-package com.example.hellotoast.presentation.viewmodel;
+package com.example.architectureexample.presentation.viewmodel;
 
 import android.app.Application;
 
@@ -6,15 +6,10 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.example.hellotoast.datastorage.MealRepository;
-import com.example.hellotoast.domain.Meal;
+import com.example.architectureexample.datastorage.MealRepository;
+import com.example.architectureexample.domain.Meal;
 
 import java.util.List;
-
-/**
- * The MealViewModel provides the interface between the UI and the data layer of the app,
- * represented by the Repository
- */
 
 public class MealViewModel extends AndroidViewModel {
 
@@ -54,6 +49,4 @@ public class MealViewModel extends AndroidViewModel {
     public void insertMeals(){
         mealRepository.insertMeals();
     }
-
 }
-

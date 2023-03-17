@@ -1,13 +1,6 @@
-package com.example.hellotoast.datastorage;
+package com.example.architectureexample.datastorage;
 
-import android.util.Log;
-
-import com.example.hellotoast.domain.Meal;
 import com.google.gson.JsonObject;
-
-import org.json.JSONObject;
-
-import java.util.List;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
@@ -29,17 +22,11 @@ public class MealClient {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
-
-
         return retrofit;
     }
     public interface MealApi {
-
-
-        @GET ("api/meal")
-        Call<JsonObject> listMeals();
+        @GET ("meal")
+        Call<JsonObject> getMeals();
     }
-
-
 
 }

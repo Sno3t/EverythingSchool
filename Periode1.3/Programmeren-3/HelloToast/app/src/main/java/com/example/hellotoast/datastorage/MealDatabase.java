@@ -22,7 +22,7 @@ import java.util.concurrent.Executors;
  */
 
 //@Database(entities = {Meal.class}, version = 2, exportSchema = false)
-@Database(entities = {Meal.class}, version = 1)
+@Database(entities = {Meal.class}, version = 2)
 @TypeConverters({Converters.class})
 public abstract class MealDatabase extends RoomDatabase {
 
@@ -43,7 +43,7 @@ public abstract class MealDatabase extends RoomDatabase {
                             // Wipes and rebuilds instead of migrating if no Migration object.
                             // Migration is not part of this practical.
                             .fallbackToDestructiveMigration()
-                            .addCallback(RoomDatabaseCallback)
+//                            .addCallback(RoomDatabaseCallback)
                             .build();
                 }
             }

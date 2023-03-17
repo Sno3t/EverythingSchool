@@ -10,17 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hellotoast.R;
-import com.example.hellotoast.datastorage.MealClient;
-import com.example.hellotoast.datastorage.MealRepository;
 import com.example.hellotoast.domain.Meal;
 import com.example.hellotoast.presentation.viewmodel.MealViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MealListActivity extends AppCompatActivity {
 
@@ -28,7 +22,7 @@ public class MealListActivity extends AppCompatActivity {
     private ArrayList<Meal> meals = null;
 
     private MealViewModel mealViewModel;
-    private MealListAdapter mealListAdapter;
+    private MealAdapter mealAdapter;
     private RecyclerView mealListRecyclerView;
 
     @Override
@@ -39,7 +33,7 @@ public class MealListActivity extends AppCompatActivity {
         // De recyclerview opzetten zodat we meals in de lijst kunnen zien.
         RecyclerView recyclerView = findViewById(R.id.meal_list_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(mealListAdapter);
+        recyclerView.setAdapter(mealAdapter);
 
 
 
@@ -59,7 +53,7 @@ public class MealListActivity extends AppCompatActivity {
                 // Lijst van meals toevoegen aan de recyclerview
                 Log.d(TAG, "Observer.onChanged aangeroepen");
                 Log.d(TAG, "We hebben " + meals.size() + " meals");
-                mealListAdapter.setData((List<Meal>) meals);
+                mealAdapter.setData((List<Meal>) meals);
             }
         });
     }

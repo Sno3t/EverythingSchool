@@ -1,4 +1,5 @@
-package com.example.hellotoast.datastorage;
+package com.example.architectureexample.datastorage;
+
 
 import android.app.Application;
 import android.os.AsyncTask;
@@ -6,49 +7,39 @@ import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 
-import com.example.hellotoast.domain.Meal;
+import com.example.architectureexample.domain.Meal;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
-import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+
 
 public class MealRepository {
 
-
+    private MealClient.MealApi mealApi;
     private MealDao mealDao;
-    private MealApi mealApiService;
-
     private LiveData<List<Meal>> allMeals;
-
     private final static String TAG = "MealRepository";
 
     public MealRepository(Application application) {
-        MealDatabase db = MealDatabase.getInstance(application);
-        mealDao = db.mealDao();
-        mealApiService = MealClient.getClient().create(MealApi.class);
+        // MealDatabase
+        MealDatabase database = MealDatabase.getInstance(application);
+        mealDao = database.mealDao();
+        // Set all meals
         allMeals = mealDao.getAllMeals();
+        mealApi = MealClient.getClient().create(MealClient.MealApi.class);
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://shareameal-api.herokuapp.com/")
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
-        mealApiService  = retrofit.create(MealApi.class);
     }
 
-
-
     public void insertMeals() {
-        Call<JsonObject> callJson = mealApiService.getMeals();
+        Call<JsonObject> callJson = mealApi.getMeals();
         Log.d(TAG, "insertMeals called");
         callJson.enqueue(new Callback<JsonObject>() {
             @Override
@@ -57,8 +48,7 @@ public class MealRepository {
                     JsonObject jsonObject = response.body();
                     JsonArray jsonArray = jsonObject.getAsJsonArray("result");
                     Gson gson = new Gson();
-                    Type type = new TypeToken<List<Meal>>() {
-                    }.getType();
+                    Type type = new TypeToken<List<Meal>>() {}.getType();
                     List<Meal> mealList = gson.fromJson(jsonArray, type);
                     mealDao.insertAllBackground(mealList);
                 }

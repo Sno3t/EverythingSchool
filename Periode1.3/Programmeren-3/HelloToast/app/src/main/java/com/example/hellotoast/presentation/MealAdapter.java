@@ -1,6 +1,5 @@
 package com.example.hellotoast.presentation;
 
-import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,30 +8,44 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.LiveData;
+import androidx.recyclerview.widget.DiffUtil;
+import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.hellotoast.R;
 import com.example.hellotoast.datastorage.MealRepository;
 import com.example.hellotoast.domain.Meal;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
-public class MealListAdapter extends RecyclerView.Adapter<MealListAdapter.MealViewHolder> {
+public class MealAdapter extends ListAdapter<Meal, MealAdapter.MealViewHolder> {//RecyclerView.Adapter<MealAdapter.MealViewHolder> {
 
-    private static final String TAG = MealListAdapter.class.getSimpleName();
+    private static final String TAG = MealAdapter.class.getSimpleName();
     private List<Meal> meals = new ArrayList<>();
 
     private MealRepository mealRepository;
     private LayoutInflater mInflater;
 
-    public MealListAdapter() { //Context context
+    public MealAdapter() {
+        super(DIFF_CALLBACK); //Context context
 //        mInflater = LayoutInflater.from(context);
 
     }
 
+    private static final DiffUtil.ItemCallback<Meal> DIFF_CALLBACK = new DiffUtil.ItemCallback<Meal>() {
+        @Override
+        public boolean areItemsTheSame(@NonNull Meal oldItem, @NonNull Meal newItem) {
+            //  return oldItem.getId() == newItem.getId();
+            return true;
+        }
+
+        @Override
+        public boolean areContentsTheSame(@NonNull Meal oldItem, @NonNull Meal newItem) {
+            return true;
+        }
+    };
 
     @NonNull
     @Override // initial
@@ -51,19 +64,9 @@ public class MealListAdapter extends RecyclerView.Adapter<MealListAdapter.MealVi
         Meal currentMeal = meals.get(position);
         holder.name.setText(currentMeal.getName());
         holder.description.setText(currentMeal.getDescription());
-//        holder.image.setImageResource(currentMeal.getImageUrl());
-
-
-//        Meal meal = meals.get(position);
-//        String name = new StringBuilder()
-//                .append(meal.getName())
-//                .append(" ")
-//                .append(meal.getDescription())
-//                .append(" ")
-//                .append(meal.getImageUrl())
-//                .toString();
-//        holder.name.setText(name);
-//        Glide.with(holder.itemView).load(meal.getImageUrl()).into(holder.image);
+        Glide.with(holder.image)
+                .load(currentMeal.getImageUrl())
+                .into(holder.image);
     }
 
     @Override

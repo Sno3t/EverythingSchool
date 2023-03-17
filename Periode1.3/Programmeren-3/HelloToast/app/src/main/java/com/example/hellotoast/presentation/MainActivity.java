@@ -10,9 +10,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.hellotoast.R;
 import com.example.hellotoast.domain.Meal;
@@ -37,20 +34,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
-        MealListAdapter adapter = new MealListAdapter();
+        MealAdapter adapter = new MealAdapter();
         recyclerView.setAdapter(adapter);
 
         mealViewModel = new ViewModelProvider(this).get(MealViewModel.class);
+        mealViewModel.insertMeals();
         mealViewModel.getAllMeals().observe(this, new Observer<List<Meal>>() {
+
 
 
             @Override
             public void onChanged(List<Meal> meals) {
                 //update recyclerview
                 Log.d(TAG, "onChanged called");
-                adapter.setData(meals);
+                adapter.submitList(meals);
+//                adapter.(meals);
             }
         });
+
+
+
     }
 
 //        goToMealListActivity();
