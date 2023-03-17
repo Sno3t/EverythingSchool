@@ -1,7 +1,5 @@
 package com.example.shareameal.presentation;
 
-import static android.app.PendingIntent.getActivity;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.shareameal.AddMealActivity;
 import com.example.shareameal.domain.Meal;
 import com.example.shareameal.presentation.viewmodel.MealViewModel;
 import com.example.shareameal.R;
@@ -56,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(List<Meal> meals) {
                 Log.d(TAG, "onChanged called");
+                Toast.makeText(MainActivity.this, meals.size() + " meals found", Toast.LENGTH_LONG).show();
                 //Updates the recyclerview
                 adapter.submitList(meals);
             }
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         buttonViewMeal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
+                Intent intent = new Intent(MainActivity.this, AddMealActivity.class);
                 startActivity(intent);
             }
         });

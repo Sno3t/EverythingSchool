@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.example.shareameal.R;
 import com.example.shareameal.domain.Meal;
-import com.example.shareameal.presentation.viewmodel.MealViewModel;
 
 import java.text.NumberFormat;
 
@@ -36,8 +35,7 @@ public class DetailsActivity extends AppCompatActivity {
     private TextView detailMealMaxAmountOfParticipants;
 
     public static Intent getIntent(Context context, Meal meal) {
-        Intent intent = new Intent(context, DetailsActivity.class);
-        return intent;
+        return new Intent(context, DetailsActivity.class);
     }
 
     @Override

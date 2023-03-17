@@ -1,6 +1,5 @@
 package com.example.shareameal.datastorage;
 
-
 import android.app.Application;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -19,7 +18,6 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
 
 public class MealRepository {
 

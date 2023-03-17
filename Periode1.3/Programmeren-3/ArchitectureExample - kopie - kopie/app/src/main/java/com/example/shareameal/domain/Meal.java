@@ -87,7 +87,6 @@ public class Meal implements Serializable, Parcelable {
         parcel.writeBoolean(this.isToTakeHome);
         parcel.writeBoolean(this.isVegan);
 //        parcel.writeInt(this.participants);
-
         parcel.writeInt(this.maxAmountOfParticipants);
         parcel.writeStringList(this.allergenes);
         parcel.writeString(this.imageUrl);
