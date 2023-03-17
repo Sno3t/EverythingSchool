@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.architectureexample.R;
 import com.example.architectureexample.domain.Meal;
+import com.example.shareameal.R;
 
 
 public class MealAdapter extends ListAdapter<Meal, MealAdapter.MealHolder> {

@@ -13,6 +13,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.shareameal.R;
+
 
 //IK MOET VAN DEZE ACTIVITY OOK NOG EEN ANDERE ACTIVITY MAKEN MET EEN X VOOR SLUITEN
 // IN DIE ACTIVITY KAN JE ALLEEN MAAR KIJKEN NAAR WAT ER IN ZIT

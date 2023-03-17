@@ -19,7 +19,9 @@ import android.widget.Toast;
 
 import com.example.architectureexample.domain.Meal;
 import com.example.architectureexample.presentation.viewmodel.MealViewModel;
-import com.example.architectureexample.R;
+import com.example.shareameal.R;
+
+//import com.example.architectureexample.R;
 
 
 import java.util.List;
