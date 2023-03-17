@@ -95,18 +95,18 @@ public class AddEditMealActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_meal);
 
-        editTextmName = findViewById(R.id.edit_text_mName);
-        editTextmDescription = findViewById(R.id.edit_text_mDescription);
-        checkBoxmIsActive = findViewById(R.id.check_box_mIsActive);
-        checkBoxmIsVega = findViewById(R.id.check_box_mIsVega);
-        checkBoxmIsVegan = findViewById(R.id.check_box_mIsVegan);
-        checkBoxmIsToTakeHome = findViewById(R.id.check_box_mIsToTakeHome);
-        datePickermDateTime = findViewById(R.id.date_picker_mDateTime);
-        editTextmMaxAmountOfParticipants = findViewById(R.id.edit_text_mMaxAmountOfParticipants);
-        editTextmPrice = findViewById(R.id.edit_text_mPrice);
-        editTextmImageUrl = findViewById(R.id.edit_text_mImageUrl);
-        editTextmAllergenes = findViewById(R.id.edit_text_mAllergenes);
-        editTextmParticipants = findViewById(R.id.edit_text_mParticipants);
+//        editTextmName = findViewById(R.id.meal_name);
+//        editTextmDescription = findViewById(R.id.meal_description);
+//        checkBoxmIsActive = findViewById(R.id.check_box_mIsActive);
+//        checkBoxmIsVega = findViewById(R.id.check_box_mIsVega);
+//        checkBoxmIsVegan = findViewById(R.id.check_box_IsVegan);
+//        checkBoxmIsToTakeHome = findViewById(R.id.check_box_mIsToTakeHome);
+//        datePickermDateTime = findViewById(R.id.date_picker_mDateTime);
+//        editTextmMaxAmountOfParticipants = findViewById(R.id.edit_MaxAmountOfParticipants);
+//        editTextmPrice = findViewById(R.id.edit_text_mPrice);
+//        editTextmImageUrl = findViewById(R.id.detail_imageUrl);
+//        editTextmAllergenes = findViewById(R.id.edit_text_mAllergenes);
+//        editTextmParticipants = findViewById(R.id.edit_text_mParticipants);
 
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
 

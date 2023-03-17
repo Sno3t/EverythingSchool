@@ -39,7 +39,6 @@ public class MealAdapter extends ListAdapter<Meal, MealAdapter.MealHolder> {
         }
     };
 
-
     @NonNull
     @Override
     public MealHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -61,8 +60,6 @@ public class MealAdapter extends ListAdapter<Meal, MealAdapter.MealHolder> {
                 .load(currentMeal.getImageUrl())
                 .placeholder(R.drawable.food_placeholder)
                 .into(holder.imageViewImage);
-
-
     }
 
     public Meal getMealAt(int position) {
@@ -95,10 +92,6 @@ public class MealAdapter extends ListAdapter<Meal, MealAdapter.MealHolder> {
     public interface OnItemClickListener {
         void onItemClick(int position);
     }
-
-//    public interface OnItemClickListener {
-//        void onItemClick(Meal meal);
-//    }
 
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;

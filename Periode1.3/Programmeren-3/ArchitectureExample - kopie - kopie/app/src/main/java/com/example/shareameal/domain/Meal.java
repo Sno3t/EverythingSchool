@@ -1,13 +1,18 @@
 package com.example.shareameal.domain;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Entity(tableName = "meal_table")
-public class Meal {
+public class Meal implements Serializable, Parcelable {
     @PrimaryKey
     private int id;
     private String name;
@@ -65,6 +70,55 @@ public class Meal {
         this.participants = builder.participants;
         this.cook = builder.cook;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel parcel, int i) {
+        parcel.writeString(this.name);
+        parcel.writeString(this.description);
+        parcel.writeDouble(this.price);
+        parcel.writeString(this.dateTime);
+        parcel.writeBoolean(this.isVega);
+        parcel.writeBoolean(this.isActive);
+        parcel.writeBoolean(this.isToTakeHome);
+        parcel.writeBoolean(this.isVegan);
+//        parcel.writeInt(this.participants);
+
+        parcel.writeInt(this.maxAmountOfParticipants);
+        parcel.writeStringList(this.allergenes);
+        parcel.writeString(this.imageUrl);
+    }
+
+    protected Meal(Parcel in) {
+        this.name = in.readString();
+        this.description = in.readString();
+        this.price = in.readDouble();
+        this.dateTime = in.readString();
+        this.isVega = in.readBoolean();
+        this.isActive = in.readBoolean();
+        this.isToTakeHome = in.readBoolean();
+        this.isVegan = in.readBoolean();
+//        this.participants = in.readInt();
+        this.maxAmountOfParticipants = in.readInt();
+        this.allergenes = in.createStringArrayList();
+        this.imageUrl = in.readString();
+    }
+
+    public static final Creator<Meal> CREATOR = new Creator<Meal>() {
+        @Override
+        public Meal createFromParcel(Parcel source) {
+            return new Meal(source);
+        }
+
+        @Override
+        public Meal[] newArray(int size) {
+            return new Meal[size];
+        }
+    };
 
     public static class Builder {
         private int id;

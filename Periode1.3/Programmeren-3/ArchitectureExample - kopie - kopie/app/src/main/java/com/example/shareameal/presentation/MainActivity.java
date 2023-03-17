@@ -5,8 +5,6 @@ import static android.app.PendingIntent.getActivity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.compose.runtime.Composable;
-import androidx.compose.ui.graphics.painter.Painter;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -15,23 +13,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.shareameal.DetailsActivity;
 import com.example.shareameal.domain.Meal;
 import com.example.shareameal.presentation.viewmodel.MealViewModel;
 import com.example.shareameal.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-//import com.example.architectureexample.R;
-
 
 import java.util.List;
 
@@ -43,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG, "onCreate called");
+        Log.d(TAG, "onCreate main called");
         setContentView(R.layout.activity_main);
 
         // Initialize the RecyclerView.
@@ -68,18 +61,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Click on meal to get details
         adapter.setOnItemClickListener(new MealAdapter.OnItemClickListener() {
             public void onItemClick(int position) {
                 // Handle click event here, e.g. start a new activity
                 Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
-                intent.putExtra("position", position);
+//                intent.putExtra("position", position);
+                intent.putExtra("meal", (Parcelable) adapter.getMealAt(position));
                 startActivity(intent);
             }
         });
         recyclerView.setAdapter(adapter);
 
 
-//         Click on meal to get details
+        // Add meal button activity start
         FloatingActionButton buttonViewMeal = findViewById(R.id.button_add_meal);
         buttonViewMeal.setOnClickListener(new View.OnClickListener() {
             @Override
