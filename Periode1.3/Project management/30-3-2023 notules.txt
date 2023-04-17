@@ -1,0 +1,39 @@
+PvA beter maken
+Letter sizes/fonts
+
+Nog een keer dingen inleveren
+Memo erbij wat er is veranderd.
+
+Inhoud:
+PvA, eerste stuk te beperkt, wat zijn grensen, methoden technieken etc, project organisatie, technische organisatie.
+Tegen strijdige informatie verwerken.
+User is gemodeleerd maar nooit uitgelegd waarom hij bestaat.
+Geen uitwerk in wat we gaan doen (Lengte en breedte) (toekomstige gebruik bvb)
+Doelling is niet uitgewerkt, later komt dat naar boven.
+
+TO, niet uitlegt wat er gebeurd in de diagrammen. Document dat iemand moet kunnen lezen.
+Lijst met lijsten assocatie stuff fixen. Het is een prvate variabele, geen associatie lijnen tekenen, geen all list object maken. Is niet consistent.
+Activiteiten diagram is te beperkt, geen api commmunicatie bvb, wanneer gebeuren er dingen tot op kleiner detail opschrijven.
+Meer toelichting nodig waarom bepaalde keuzes zijn gemaakt.
+
+navigatie werkt
+Use case klopt
+
+Functioneel ontwerp is prima
+
+Schermontwerp maken, use cases etc, naar testers gooien, zij maken test plannen, zij testen die scenario's op onze app.
+Als informatie vooraf verkeerd is gaat het testen niet werken.
+Consistensie tussen alle diagrammen en code behouden.
+
+Midden weg voor user, structuur voor user maar niet uitgewerkt.
+
+Diagram updaten dat eer geen cirkel is.
+
+Planning:
+PvA updaten
+TO updaten
+
+Maandag ochtend meeting Rik Boss, LA101 (engineering ding) 
+Donderdag in teams eind presentatie. (laat inplannen)
+
+

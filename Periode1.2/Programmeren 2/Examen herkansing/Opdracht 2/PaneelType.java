@@ -1,0 +1,5 @@
+enum PaneelType {
+    KUNSTSTOFGLAS,
+    GLASGLAS
+}
+
