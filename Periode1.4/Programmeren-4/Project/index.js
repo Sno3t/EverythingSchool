@@ -22,3 +22,18 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
 
+
+app.get('/api/info', (req, res) => {
+    res.status(200).json({
+        status: 200,
+        message: "a",
+        data: {
+            studentName: "aa",
+            studentNumber: 12345,
+            description: "aaa"
+        }
+    })
+})
+
+
+
