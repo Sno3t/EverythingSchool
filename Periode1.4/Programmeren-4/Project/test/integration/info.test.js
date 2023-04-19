@@ -14,6 +14,10 @@ describe('Server-info', function () {
                 res.body.should.has.property('status').to.be.equal(200);
                 res.body.should.has.property('message');
                 res.body.should.has.property('data');
+                let {data, message} = res.body;
+                data.should.be.an('object');
+                data.should.has.property('studentName').to.be.equal("aa")
+                data.should.has.property('studentNumber').to.be.equal(12345)
                 done();
             });
     });
