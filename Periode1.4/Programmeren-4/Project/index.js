@@ -28,12 +28,11 @@ app.get('/api/info', (req, res) => {
         status: 200,
         message: "a",
         data: {
-            studentName: "aa",
-            studentNumber: 12345,
-            description: "aaa"
+            studentName: "Tycho Brakenhoff",
+            studentNumber: 2199294,
+            description: "This guy"
         }
     })
 })
-
 
 module.exports = app;
