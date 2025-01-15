@@ -63,7 +63,8 @@ public class MealRepository {
 
 
     public LiveData<List<Meal>> getAllMeals() {
-//        refreshMeals();
+//        refr
+//        eshMeals();
         return mealDao.getAllMeals();
 
     }
